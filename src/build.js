@@ -75,9 +75,8 @@ function sayfa({ baslik, aciklama, yol, govde, aktif = '', ekHead = '', gorsel =
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#8E1F3D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=DM+Sans:opsz,wght@9..40,400..700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css?v=${CSSV}">
 ${ekHead}
 </head>
@@ -369,7 +368,7 @@ const kvkk = metinSayfa('/kvkk/', 'KVKK Aydınlatma Metni', 'Gün Tabağı kişi
 
 const cerez = metinSayfa('/cerez-politikasi/', 'Çerez Politikası', 'Gün Tabağı çerez politikası.', `
 <p>Gün Tabağı şu anda reklam, analiz ya da takip amaçlı çerez kullanmamaktadır. Sitede yalnızca sayfanın düzgün görüntülenmesi için gerekli teknik altyapı çalışır.</p>
-<p>Sitede yazı tipleri Google Fonts üzerinden yüklenir; bu sırada tarayıcınızın IP adresi Google'a iletilebilir.</p>
+<p>Sitedeki yazı tipleri ve görseller kendi sunucumuzdan ya da kardeş sitemiz Mesai Mutfak'tan yüklenir; Google Fonts gibi üçüncü taraf font servisleri kullanılmaz.</p>
 <p>İleride analiz veya reklam çerezleri kullanılmaya başlanırsa, bu sayfa güncellenecek ve çerezler yalnızca açık rızanızla etkinleştirilecektir.</p>
 <p>Sorularınız için: <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a></p>`);
 
@@ -414,7 +413,7 @@ ${OKUR.length ? `<div class="izgara">${OKUR.map((o) => `<figure class="kart okur
 <label class="alan"><span>Tabakta ne var?</span><input type="text" name="tarif" required maxlength="80" placeholder="Örn. Patatesli milföy, kısır, revani"></label>
 <label class="alan"><span>Kısa bir not <small>(isteğe bağlı)</small></span><textarea name="not" rows="3" maxlength="280" placeholder="Kayınvalide ne dedi? Tabakta bir şey kaldı mı?"></textarea></label>
 <label class="alan"><span>Fotoğraf</span><input type="file" name="fotograf" accept="image/jpeg,image/png,image/webp" required></label>
-<label class="onay"><input type="checkbox" name="yayin-onayi" value="evet" required><span>Gönderdiğim fotoğrafı kendim çektim. Fotoğrafın ve rumuzumun Gün Tabağı'nda ve sosyal medya hesaplarında yayınlanmasına açık rıza veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum; rızamı istediğim zaman <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a> adresine yazarak geri alabilirim.</span></label>
+<label class="onay"><input type="checkbox" name="yayin-onayi" value="evet" required><span>18 yaşından büyüğüm ve gönderdiğim fotoğrafı kendim çektim. Fotoğrafın ve rumuzumun Gün Tabağı'nda ve sosyal medya hesaplarında yayınlanmasına açık rıza veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum; rızamı istediğim zaman <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a> adresine yazarak geri alabilirim.</span></label>
 <button type="submit" class="btn dolu" style="align-self:flex-start">Tabağımı gönder</button>
 </form></div></div></section>`
 });
