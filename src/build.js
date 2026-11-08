@@ -121,8 +121,9 @@ const panikHatti = (kaynak) => `<section class="bolum panik" id="panik-hatti"><d
 <div class="panik-satir"><label class="gizli" for="eposta-${kaynak}">E-posta adresin</label>
 <input id="eposta-${kaynak}" type="email" name="eposta" required autocomplete="email" placeholder="E-posta adresin">
 <button type="submit" class="btn dolu">Beni de ekle</button></div>
+<input type="hidden" name="onay-metni" value="panik-hatti-v2-2026-11-08">
 <label class="onay"><input type="checkbox" name="eposta-onayi" value="evet" required>
-<span>Gün Tabağı'nın tarif, menü ve kampanya içerikli (sponsorlu içerikler dahil) e-postalarını almayı kabul ediyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum. Onayımı her e-postadaki bağlantıyla geri alabilirim.</span></label>
+<span>Gün Tabağı'nın her hafta gönderdiği tarif bültenini almak istiyorum. Bültende iş birliği yapılan markaların <strong>reklam ve kampanyalarına</strong> da yer verileceğini biliyorum ve bu içerikleri taşıyan ticari elektronik iletileri almaya onay veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum. Onayımı her e-postadaki "abonelikten çık" bağlantısıyla geri alabilirim.</span></label>
 </form></div></div></section>`;
 
 // ---------- Ana sayfa ----------
@@ -360,11 +361,11 @@ const kvkk = metinSayfa('/kvkk/', 'KVKK Aydınlatma Metni', 'Gün Tabağı kişi
 <li><strong>Trafik kayıtları:</strong> Siteyi ziyaret ettiğinizde, barındırma altyapısı tarafından tutulan IP adresi, tarayıcı bilgisi ve erişim zamanı.</li>
 </ul>
 <h2>Hangi amaçlarla ve hangi hukuki sebeple?</h2>
-<p>Bülten için e-posta adresiniz, size haftalık tarif, menü ve kampanya içerikli e-postalar gönderebilmek amacıyla, 6563 sayılı Kanun kapsamında verdiğiniz onaya dayanarak ve KVKK m.5/2-c (hizmetin sunulması için zorunlu olması) ile m.5/2-ç (onay kayıtlarının saklanmasına ilişkin hukuki yükümlülük) uyarınca işlenir. Onay kayıtları, onayın geri alınmasından itibaren mevzuatın öngördüğü süre boyunca saklanır.</p>
+<p>Bülten için e-posta adresiniz, size haftalık tarif ve menü içeriklerini, iş birliği yaptığımız markaların reklam ve kampanyalarıyla birlikte e-postayla gönderebilmek amacıyla, 6563 sayılı Kanun kapsamında verdiğiniz ticari elektronik ileti onayına dayanarak ve KVKK m.5/2-c (hizmetin sunulması için zorunlu olması) ile m.5/2-ç (onay kayıtlarının saklanmasına ilişkin hukuki yükümlülük) uyarınca işlenir. Onay kayıtları, onayın geri alınmasından itibaren mevzuatın öngördüğü süre boyunca saklanır.</p>
 <p>Okur Tabakları'na gönderdiğiniz fotoğraf ve rumuz, sitede ve sosyal medya hesaplarımızda yayınlanması amacıyla KVKK m.5/1 uyarınca açık rızanıza dayanarak işlenir; rızanızı geri aldığınızda yayından kaldırılır ve silinir. Yayınlanmayan gönderiler en geç 6 ay içinde silinir.</p>
 <p>E-posta yazışmaları KVKK m.5/2-f uyarınca talebinize yanıt verebilmek için; trafik kayıtları ise KVKK m.5/2-ç uyarınca 5651 sayılı Kanun'dan doğan yükümlülükler ve sitenin güvenliği için işlenir.</p>
 <h2>Kimlere aktarılır?</h2>
-<p>Veriler; barındırma ve form hizmeti aldığımız Netlify, Inc. ile, bülten gönderimi için kullanacağımız e-posta gönderim hizmeti sağlayıcısıyla ve talep edilmesi hâlinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir. Bu hizmet sağlayıcıların sunucuları yurt dışında (Netlify, Inc. için ABD ve küresel içerik dağıtım ağı) bulunduğundan, aktarım KVKK m.9 uyarınca Kişisel Verileri Koruma Kurulu'nun ilan ettiği standart sözleşme ile gerçekleştirilir ve Kurum'a bildirilir. Verileriniz üçüncü kişilere satılmaz ve reklam amacıyla paylaşılmaz.</p>
+<p>Veriler; barındırma ve form hizmeti aldığımız Netlify, Inc. ile, bülten gönderimi için kullanacağımız e-posta gönderim hizmeti sağlayıcısıyla ve talep edilmesi hâlinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir. Bu hizmet sağlayıcıların sunucuları yurt dışında (Netlify, Inc. için ABD ve küresel içerik dağıtım ağı) bulunduğundan, aktarım KVKK m.9 uyarınca Kişisel Verileri Koruma Kurulu'nun ilan ettiği standart sözleşme ile gerçekleştirilir ve Kurum'a bildirilir. Bültende reklamı yer alan markalarla e-posta adresiniz dahil hiçbir kişisel veriniz paylaşılmaz; verileriniz üçüncü kişilere satılmaz. Onayınız ve onay zamanınız İleti Yönetim Sistemi'ne (İYS) kaydedilir.</p>
 <h2>Bültenden nasıl çıkarım?</h2>
 <p>Her bülten e-postasının altındaki "abonelikten çık" bağlantısını kullanabilir ya da <a href="mailto:sales@advancedigital.media?subject=B%C3%BClten%20iptal">sales@advancedigital.media</a> adresine yazabilirsiniz. Onayınızı geri aldığınızda size bülten gönderilmez.</p>
 <h2>Haklarınız</h2>
