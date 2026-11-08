@@ -97,7 +97,7 @@ ${govde}
 <p>Gün Tabağı bir Advance Digital yayınıdır. Kalorileri saymıyoruz; zaten misafirler yiyor.</p>
 <p>Kardeş site: <a href="https://mesaimutfak.com/?utm_source=guntabagi&amp;utm_medium=referral&amp;utm_campaign=footer">Mesai Mutfak</a></p>
 <p style="font-size:13px;opacity:.8">© 2026 Gün Tabağı. Tarifler ve metinler izinsiz kopyalanamaz; kopyalayanın börekleri açılır.</p></div>
-<nav aria-label="Alt menü"><a href="/kunye/">Künye</a><a href="/kvkk/">KVKK Aydınlatma Metni</a><a href="/cerez-politikasi/">Çerez Politikası</a><a href="/reklam/">Reklam</a><a href="mailto:merhaba@guntabagi.com.tr">İletişim</a></nav>
+<nav aria-label="Alt menü"><a href="/kunye/">Künye</a><a href="/kvkk/">KVKK Aydınlatma Metni</a><a href="/cerez-politikasi/">Çerez Politikası</a><a href="/reklam/">Reklam</a><a href="mailto:sales@advancedigital.media">İletişim</a></nav>
 </div></footer>
 <script src="/assets/app.js?v=${JSV}" defer></script>
 </body>
@@ -227,7 +227,7 @@ ${panikHatti('anasayfa')}
 
 <section class="bolum" style="padding-top:0"><div class="kap"><div class="davet">
 <div style="flex:1 1 380px;min-width:0"><h2>Senin de bir gün tarifin mi var?</h2><p>Herkesin tarifini sorduğu o börek, o kurabiye... Bize yaz, en muzip notlarla Gün Tabağı'nda yayınlayalım.</p></div>
-<a class="btn dolu" href="mailto:merhaba@guntabagi.com.tr?subject=G%C3%BCn%20tarifim">Tarifimi gönder</a>
+<a class="btn dolu" href="mailto:sales@advancedigital.media?subject=G%C3%BCn%20tarifim">Tarifimi gönder</a>
 </div></div></section>`
 });
 
@@ -343,7 +343,7 @@ const kunye = metinSayfa('/kunye/', 'Künye', 'Gün Tabağı künye bilgileri.',
 <tr><td>İmtiyaz sahibi</td><td>Advance Dijital Medya Reklam Hizmetleri A.Ş.</td></tr>
 <tr><td>Adres</td><td>Ümraniye / İstanbul</td></tr>
 <tr><td>Genel Yayın Yönetmeni</td><td>Sıtkı Pehlivan</td></tr>
-<tr><td>İletişim</td><td><a href="mailto:merhaba@guntabagi.com.tr">merhaba@guntabagi.com.tr</a></td></tr>
+<tr><td>İletişim</td><td><a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a></td></tr>
 <tr><td>Yer sağlayıcı</td><td>Netlify, Inc.</td></tr>
 </table><p>Sitedeki tarifler, metinler ve görseller Gün Tabağı'na aittir; kaynak gösterilmeden kopyalanamaz.</p>`);
 
@@ -363,19 +363,19 @@ const kvkk = metinSayfa('/kvkk/', 'KVKK Aydınlatma Metni', 'Gün Tabağı kişi
 <h2>Kimlere aktarılır?</h2>
 <p>Veriler; barındırma ve form hizmeti aldığımız Netlify, Inc. ile, bülten gönderimi için kullanacağımız e-posta gönderim hizmeti sağlayıcısıyla ve talep edilmesi hâlinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir. Bu hizmet sağlayıcıların sunucuları yurt dışında bulunduğundan, aktarım KVKK m.9 uyarınca standart sözleşme ile gerçekleştirilir. Verileriniz üçüncü kişilere satılmaz ve reklam amacıyla paylaşılmaz.</p>
 <h2>Bültenden nasıl çıkarım?</h2>
-<p>Her bülten e-postasının altındaki "abonelikten çık" bağlantısını kullanabilir ya da <a href="mailto:merhaba@guntabagi.com.tr?subject=B%C3%BClten%20iptal">merhaba@guntabagi.com.tr</a> adresine yazabilirsiniz. Onayınızı geri aldığınızda size bülten gönderilmez.</p>
+<p>Her bülten e-postasının altındaki "abonelikten çık" bağlantısını kullanabilir ya da <a href="mailto:sales@advancedigital.media?subject=B%C3%BClten%20iptal">sales@advancedigital.media</a> adresine yazabilirsiniz. Onayınızı geri aldığınızda size bülten gönderilmez.</p>
 <h2>Haklarınız</h2>
-<p>KVKK m.11 kapsamında verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini veya silinmesini isteme ve diğer haklarınıza ilişkin taleplerinizi <a href="mailto:merhaba@guntabagi.com.tr">merhaba@guntabagi.com.tr</a> adresine iletebilirsiniz. Talepleriniz en geç 30 gün içinde yanıtlanır.</p>`);
+<p>KVKK m.11 kapsamında verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini veya silinmesini isteme ve diğer haklarınıza ilişkin taleplerinizi <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a> adresine iletebilirsiniz. Talepleriniz en geç 30 gün içinde yanıtlanır.</p>`);
 
 const cerez = metinSayfa('/cerez-politikasi/', 'Çerez Politikası', 'Gün Tabağı çerez politikası.', `
 <p>Gün Tabağı şu anda reklam, analiz ya da takip amaçlı çerez kullanmamaktadır. Sitede yalnızca sayfanın düzgün görüntülenmesi için gerekli teknik altyapı çalışır.</p>
 <p>Sitede yazı tipleri Google Fonts üzerinden yüklenir; bu sırada tarayıcınızın IP adresi Google'a iletilebilir.</p>
 <p>İleride analiz veya reklam çerezleri kullanılmaya başlanırsa, bu sayfa güncellenecek ve çerezler yalnızca açık rızanızla etkinleştirilecektir.</p>
-<p>Sorularınız için: <a href="mailto:merhaba@guntabagi.com.tr">merhaba@guntabagi.com.tr</a></p>`);
+<p>Sorularınız için: <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a></p>`);
 
 const reklamSayfa = metinSayfa('/reklam/', 'Reklam', 'Gün Tabağı reklam ve iş birliği.', `
 <p>Gün Tabağı, ev sahipliği yapan, misafir ağırlamayı seven ve sofrasıyla övünen kadınlara ulaşır. Gıda, mutfak, ev, kozmetik ve perakende markaları için içerik iş birlikleri, sponsorlu tarifler ve görüntülü reklam alanları sunar.</p>
-<p>Gün Tabağı bir Advance Digital yayınıdır. Reklam ve iş birlikleri için: <a href="mailto:merhaba@guntabagi.com.tr?subject=Reklam">merhaba@guntabagi.com.tr</a></p>`);
+<p>Gün Tabağı bir Advance Digital yayınıdır. Reklam ve iş birlikleri için: <a href="mailto:sales@advancedigital.media?subject=Reklam">sales@advancedigital.media</a></p>`);
 
 
 
@@ -414,7 +414,7 @@ ${OKUR.length ? `<div class="izgara">${OKUR.map((o) => `<figure class="kart okur
 <label class="alan"><span>Tabakta ne var?</span><input type="text" name="tarif" required maxlength="80" placeholder="Örn. Patatesli milföy, kısır, revani"></label>
 <label class="alan"><span>Kısa bir not <small>(isteğe bağlı)</small></span><textarea name="not" rows="3" maxlength="280" placeholder="Kayınvalide ne dedi? Tabakta bir şey kaldı mı?"></textarea></label>
 <label class="alan"><span>Fotoğraf</span><input type="file" name="fotograf" accept="image/jpeg,image/png,image/webp" required></label>
-<label class="onay"><input type="checkbox" name="yayin-onayi" value="evet" required><span>Gönderdiğim fotoğrafı kendim çektim. Fotoğrafın ve rumuzumun Gün Tabağı'nda ve sosyal medya hesaplarında yayınlanmasına açık rıza veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum; rızamı istediğim zaman <a href="mailto:merhaba@guntabagi.com.tr">merhaba@guntabagi.com.tr</a> adresine yazarak geri alabilirim.</span></label>
+<label class="onay"><input type="checkbox" name="yayin-onayi" value="evet" required><span>Gönderdiğim fotoğrafı kendim çektim. Fotoğrafın ve rumuzumun Gün Tabağı'nda ve sosyal medya hesaplarında yayınlanmasına açık rıza veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum; rızamı istediğim zaman <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a> adresine yazarak geri alabilirim.</span></label>
 <button type="submit" class="btn dolu" style="align-self:flex-start">Tabağımı gönder</button>
 </form></div></div></section>`
 });
