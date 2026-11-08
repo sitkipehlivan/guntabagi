@@ -340,7 +340,10 @@ const kunye = metinSayfa('/kunye/', 'Künye', 'Gün Tabağı künye bilgileri.',
 <tr><td>Yayın adı</td><td>Gün Tabağı (guntabagi.com.tr)</td></tr>
 <tr><td>Yayın türü</td><td>Yaygın, süreli internet yayını</td></tr>
 <tr><td>İmtiyaz sahibi</td><td>Advance Dijital Medya Reklam Hizmetleri A.Ş.</td></tr>
-<tr><td>Adres</td><td>Ümraniye / İstanbul</td></tr>
+<tr><td>Adres</td><td>İstiklal Mah. Şehit Ali Çelik Sk. Asran Apt. No: 33 İç Kapı No: 3, Ümraniye / İstanbul</td></tr>
+<tr><td>MERSİS No</td><td>0008193677700001</td></tr>
+<tr><td>Ticaret Sicil No</td><td>İstanbul Ticaret Odası, 1081503</td></tr>
+<tr><td>Vergi Dairesi / No</td><td>Ümraniye / 8193677700</td></tr>
 <tr><td>Genel Yayın Yönetmeni</td><td>Sıtkı Pehlivan</td></tr>
 <tr><td>İletişim</td><td><a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a></td></tr>
 <tr><td>Yer sağlayıcı</td><td>Netlify, Inc.</td></tr>
@@ -348,6 +351,7 @@ const kunye = metinSayfa('/kunye/', 'Künye', 'Gün Tabağı künye bilgileri.',
 
 const kvkk = metinSayfa('/kvkk/', 'KVKK Aydınlatma Metni', 'Gün Tabağı kişisel verilerin korunması aydınlatma metni.', `
 <p>Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla Advance Dijital Medya Reklam Hizmetleri A.Ş. ("Advance") tarafından guntabagi.com.tr ziyaretçilerini bilgilendirmek amacıyla hazırlanmıştır.</p>
+<p><strong>Veri sorumlusu:</strong> Advance Dijital Medya Reklam Hizmetleri A.Ş. · İstiklal Mah. Şehit Ali Çelik Sk. Asran Apt. No: 33 İç Kapı No: 3, Ümraniye / İstanbul · MERSİS: 0008193677700001 · İletişim: <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a></p>
 <h2>Hangi verileri işliyoruz?</h2>
 <ul>
 <li><strong>Gün Öncesi Panik Hattı:</strong> Bültene kaydolursanız e-posta adresiniz, onay verdiğiniz tarih ve saat ile kaydı yaptığınız sayfa bilgisi.</li>
@@ -360,7 +364,7 @@ const kvkk = metinSayfa('/kvkk/', 'KVKK Aydınlatma Metni', 'Gün Tabağı kişi
 <p>Okur Tabakları'na gönderdiğiniz fotoğraf ve rumuz, sitede ve sosyal medya hesaplarımızda yayınlanması amacıyla KVKK m.5/1 uyarınca açık rızanıza dayanarak işlenir; rızanızı geri aldığınızda yayından kaldırılır ve silinir. Yayınlanmayan gönderiler en geç 6 ay içinde silinir.</p>
 <p>E-posta yazışmaları KVKK m.5/2-f uyarınca talebinize yanıt verebilmek için; trafik kayıtları ise KVKK m.5/2-ç uyarınca 5651 sayılı Kanun'dan doğan yükümlülükler ve sitenin güvenliği için işlenir.</p>
 <h2>Kimlere aktarılır?</h2>
-<p>Veriler; barındırma ve form hizmeti aldığımız Netlify, Inc. ile, bülten gönderimi için kullanacağımız e-posta gönderim hizmeti sağlayıcısıyla ve talep edilmesi hâlinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir. Bu hizmet sağlayıcıların sunucuları yurt dışında bulunduğundan, aktarım KVKK m.9 uyarınca standart sözleşme ile gerçekleştirilir. Verileriniz üçüncü kişilere satılmaz ve reklam amacıyla paylaşılmaz.</p>
+<p>Veriler; barındırma ve form hizmeti aldığımız Netlify, Inc. ile, bülten gönderimi için kullanacağımız e-posta gönderim hizmeti sağlayıcısıyla ve talep edilmesi hâlinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir. Bu hizmet sağlayıcıların sunucuları yurt dışında (Netlify, Inc. için ABD ve küresel içerik dağıtım ağı) bulunduğundan, aktarım KVKK m.9 uyarınca Kişisel Verileri Koruma Kurulu'nun ilan ettiği standart sözleşme ile gerçekleştirilir ve Kurum'a bildirilir. Verileriniz üçüncü kişilere satılmaz ve reklam amacıyla paylaşılmaz.</p>
 <h2>Bültenden nasıl çıkarım?</h2>
 <p>Her bülten e-postasının altındaki "abonelikten çık" bağlantısını kullanabilir ya da <a href="mailto:sales@advancedigital.media?subject=B%C3%BClten%20iptal">sales@advancedigital.media</a> adresine yazabilirsiniz. Onayınızı geri aldığınızda size bülten gönderilmez.</p>
 <h2>Haklarınız</h2>
