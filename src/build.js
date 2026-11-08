@@ -9,6 +9,8 @@ const kat = Object.fromEntries(D.kategoriler.map((k) => [k.id, k.ad]));
 const bul = (slug) => D.tumTarifler.find((t) => t.slug === slug);
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const surum = (f) => require('crypto').createHash('md5').update(fs.readFileSync(path.join(__dirname, 'static', 'assets', f))).digest('hex').slice(0, 8);
+const CSSV = surum('style.css'), JSV = surum('app.js');
 const yaz = (rel, icerik) => { const p = path.join(OUT, rel); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, icerik); };
 const sureYaz = (dk) => (dk >= 60 ? `${Math.floor(dk / 60)} sa${dk % 60 ? ' ' + (dk % 60) + ' dk' : ''}` : `${dk} dk`);
 
@@ -75,7 +77,7 @@ function sayfa({ baslik, aciklama, yol, govde, aktif = '', ekHead = '', gorsel =
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=DM+Sans:opsz,wght@9..40,400..700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=${CSSV}">
 ${ekHead}
 </head>
 <body>
@@ -95,7 +97,7 @@ ${govde}
 <p style="font-size:13px;opacity:.8">© 2026 Gün Tabağı. Tarifler ve metinler izinsiz kopyalanamaz; kopyalayanın börekleri açılır.</p></div>
 <nav aria-label="Alt menü"><a href="/kunye/">Künye</a><a href="/kvkk/">KVKK Aydınlatma Metni</a><a href="/cerez-politikasi/">Çerez Politikası</a><a href="/reklam/">Reklam</a><a href="mailto:merhaba@guntabagi.com.tr">İletişim</a></nav>
 </div></footer>
-<script src="/assets/app.js" defer></script>
+<script src="/assets/app.js?v=${JSV}" defer></script>
 </body>
 </html>`;
 }
