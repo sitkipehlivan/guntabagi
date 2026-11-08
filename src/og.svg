@@ -8,7 +8,7 @@
 <ellipse cx="1010" cy="250" rx="34" ry="18" fill="#C2562F" transform="rotate(-20 1010 250)"/>
 <ellipse cx="1030" cy="300" rx="34" ry="18" fill="#C2562F" transform="rotate(-20 1030 300)"/>
 <rect x="960" y="350" width="110" height="70" rx="10" fill="#7A4A2E"/><rect x="960" y="350" width="110" height="22" rx="10" fill="#F3E6D3"/>
-<text x="80" y="170" font-family="DejaVu Serif, serif" font-style="italic" font-weight="bold" font-size="54" fill="#8E1F3D">gün tabağı</text>
+<text x="80" y="170" font-family="DejaVu Serif, serif" font-weight="bold" font-size="56" fill="#8E1F3D">gün</text><g transform="translate(205 128)"><circle cx="22" cy="22" r="17" fill="none" stroke="#8E1F3D" stroke-width="7"/><circle cx="22" cy="22" r="8" fill="#C9952E"/></g><text x="258" y="170" font-family="DejaVu Serif, serif" font-weight="bold" font-size="56" fill="#8E1F3D">tabağı</text>
 <text x="80" y="300" font-family="DejaVu Serif, serif" font-weight="bold" font-size="76" fill="#2A1A1F">Panik yok,</text>
 <text x="80" y="390" font-family="DejaVu Serif, serif" font-weight="bold" font-size="76" fill="#2A1A1F">tabak bizde.</text>
 <text x="80" y="470" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#4A3439">Kayınvalide onaylı gün tarifleri</text>

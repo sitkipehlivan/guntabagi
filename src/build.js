@@ -15,7 +15,8 @@ const yaz = (rel, icerik) => { const p = path.join(OUT, rel); fs.mkdirSync(path.
 const sureYaz = (dk) => (dk >= 60 ? `${Math.floor(dk / 60)} sa${dk % 60 ? ' ' + (dk % 60) + ' dk' : ''}` : `${dk} dk`);
 
 // ---------- Logo ----------
-const logoSvg = (b = 44) => `<svg width="${b}" height="${b}" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#FFFFFF" stroke="#8E1F3D" stroke-width="2.5"/><circle cx="24" cy="24" r="16" fill="none" stroke="#C9952E" stroke-width="1.5" stroke-dasharray="2 3"/><circle cx="24" cy="24" r="9" fill="#F6D5D5"/></svg>`;
+const tabakSvg = (b, halka = '#8E1F3D', kalin = 14) => `<svg width="${b}" height="${b}" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="${100 - kalin / 2 - 12}" fill="none" stroke="${halka}" stroke-width="${kalin}"/><circle cx="100" cy="100" r="36" fill="#C9952E"/></svg>`;
+const logoYazi = (renk) => `<span class="logo-yazi" style="color:${renk}">gün<span class="logo-tabak">${tabakSvg(26, renk, 18)}</span>tabağı</span>`;
 
 // ---------- Tarif illüstrasyonları (SVG, 800x600) ----------
 function tabak(ic, zemin = '#F6D5D5') {
@@ -84,7 +85,7 @@ ${ekHead}
 <a class="gizli" href="#icerik">İçeriğe geç</a>
 <div class="bant">Uyarı: Bu sitedeki kalori bilgileri yalnızca misafirler için geçerlidir. Ev sahibi gün boyu ayakta olduğundan yaktığı kabul edilir.</div>
 <header class="ust"><div class="kap">
-<a class="logo" href="/" aria-label="Gün Tabağı ana sayfa">${logoSvg()}<span>gün tabağı</span></a>
+<a class="logo" href="/" aria-label="Gün Tabağı ana sayfa">${logoYazi('#2A1A1F')}</a>
 <form class="ust-ara" role="search" action="/tarifler/" method="get"><label class="gizli" for="ust-ara-girdi">Tarif ara</label><input id="ust-ara-girdi" type="search" name="q" placeholder="Tarif ara"><button type="submit" aria-label="Ara"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button></form>
 <nav class="menu" aria-label="Ana menü">${nav.map(([h, a]) => `<a href="${h}"${aktif === h ? ' aria-current="page"' : ''}>${a}</a>`).join('')}</nav>
 </div></header>
@@ -92,7 +93,7 @@ ${ekHead}
 ${govde}
 </main>
 <footer class="alt-bilgi"><div class="kap">
-<div><div class="logo-y">gün tabağı</div>
+<div><div class="logo-y">${logoYazi('#FFF7EE')}</div>
 <p>Gün Tabağı bir Advance Digital yayınıdır. Kalorileri saymıyoruz; zaten misafirler yiyor.</p>
 <p>Kardeş site: <a href="https://mesaimutfak.com/?utm_source=guntabagi&amp;utm_medium=referral&amp;utm_campaign=footer">Mesai Mutfak</a></p>
 <p style="font-size:13px;opacity:.8">© 2026 Gün Tabağı. Tarifler ve metinler izinsiz kopyalanamaz; kopyalayanın börekleri açılır.</p></div>
@@ -452,7 +453,7 @@ yaz('okur-tabaklari/index.html', okurSayfa);
 yaz('tabak-gonderildi/index.html', gonderildi);
 D.tamTarifler.forEach((t) => { yaz(`img/tarifler/${t.slug}.svg`, cizimler[t.cizim]()); yaz(`tarif/${t.slug}/index.html`, tamSayfa(t)); });
 D.mmTarifler.forEach((t) => yaz(`tarif/${t.slug}/index.html`, mmSayfa(t)));
-yaz('favicon.svg', logoSvg(48).replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '));
+yaz('favicon.svg', tabakSvg(48, '#8E1F3D', 22).replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '));
 
 const urls = ['/', '/tarifler/', '/beyaz-yaka-gunu/', '/okur-tabaklari/', '/trend-kosesi/', '/gun-sozlugu/', '/kunye/', '/kvkk/', '/cerez-politikasi/', '/reklam/', ...D.tumTarifler.map((t) => `/tarif/${t.slug}/`)];
 yaz('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc><lastmod>2026-11-08</lastmod></url>`).join('\n')}\n</urlset>\n`);
