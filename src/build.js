@@ -170,7 +170,7 @@ const anasayfa = sayfa({
 <fieldset><legend>Kimler geliyor?</legend><div class="secenekler">${secenek('kim', 'mahalle', 'Komşular & akrabalar', true)}${secenek('kim', 'ofis', 'Ofis ekibi (beyaz yaka modu)', false)}</div></fieldset>
 <fieldset><legend>Kaç kişi geliyor?</legend><div class="secenekler">${secenek('kisi', 'az', '4–6 (samimi)', false)}${secenek('kisi', 'orta', '7–10 (klasik gün)', true)}${secenek('kisi', 'cok', '11+ (bütün site geliyor)', false)}</div></fieldset>
 <fieldset><legend>Ne kadar vaktin var?</legend><div class="secenekler">${secenek('vakit', 'dun', 'Dün akşam haber verdiler', true)}${secenek('vakit', 'gun', 'Bir günüm var', false)}${secenek('vakit', 'hafta', 'Bir haftadır hazırlanıyorum', false)}</div></fieldset>
-<fieldset><legend>Bütçe durumu?</legend><div class="secenekler">${secenek('butce', 'ay', 'Ay sonu', true)}${secenek('butce', 'maas', 'Maaş yattı', false)}${secenek('butce', 'altin', 'Altın günü, rezil olamam', false)}${secenek('butce', 'koca', 'Kocam bütçe ayırdı', false)}</div></fieldset>
+<fieldset><legend>Bütçe durumu?</legend><div class="secenekler">${secenek('butce', 'ay', 'Ay sonu', true)}${secenek('butce', 'maas', 'Maaş yattı', false)}${secenek('butce', 'altin', 'Altın günü, rezil olamam', false)}</div></fieldset>
 </div>
 <div class="mo-sonuc" aria-live="polite"><div class="ust-satir"><h3>Senin gün menün</h3><span class="el" data-etiket></span></div>
 <ol class="mo-liste"></ol>

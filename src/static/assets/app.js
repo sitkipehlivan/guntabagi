@@ -5,7 +5,7 @@
     var veri = JSON.parse(document.getElementById('menu-veri').textContent);
     var secim = { kim: 'mahalle', kisi: 'orta', vakit: 'dun', butce: 'ay' };
     var kisiNot = { az: 'Tarifler olduğu gibi yeter, bir tabak da yedek dursun.', orta: 'Her tarifi 1,5 katı yap, çay demliğini iki kez doldurmaya hazır ol.', cok: 'Her şeyi iki katı yap ve komşudan sandalye iste.' };
-    var butceNot = { ay: 'Sade tarif, şık tabak. Çeyiz servis takımını çıkarma zamanı.', maas: 'Bir çeşit fazla yap, nasılsa yenir.', altin: 'Bir çeşit daha ekle, kenarına ceviz serp. Altın günü ciddiyet ister.', koca: 'Bütçe kocadan geldi: iki çeşit fazla yap, tatlıyı pastaneden de takviye et, fişi buzdolabına mıknatısla as.' };
+    var butceNot = { ay: 'Sade tarif, şık tabak. Çeyiz servis takımını çıkarma zamanı.', maas: 'Bir çeşit fazla yap, nasılsa yenir.', altin: 'Bir çeşit daha ekle, kenarına ceviz serp. Altın günü ciddiyet ister.' };
     var etiket = { dun: 'acil durum modu', gun: 'klasik gün', hafta: 'gösteriş modu', plaza: 'beyaz yaka modu' };
     var notlar = {
       dun: ['Hazır hamur, 45 dakika. Kimse bilmeyecek.', 'Fırın yok, stres yok.', 'Yirmi dakikada biter, sohbet konusu hazır.', 'On dakikalık meyhane şıklığı.'],

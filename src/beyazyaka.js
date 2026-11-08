@@ -131,7 +131,7 @@ module.exports = [
       ['Brunch havası', 5, 'Pazar sabahı kafesi, salı öğleden sonra salonunda.'],
       ['Vegan misafir mutluluğu', 5, 'Börek tabağından uzakta, güvenli bölge.'],
       ['Avokado kararma riski', 3, 'Limon sıkmazsan yirmi dakikada grileşir. Limon sık.'],
-      ['Bütçe dostluğu', 2, 'Avokado fiyatı, "kocam bütçe ayırdı" modunda daha az acıtır.']
+      ['Bütçe dostluğu', 2, 'Avokado fiyatı, "maaş yattı" haftasında daha az acıtır.']
     ],
     malzemeler: [
       ['1 adet', 'ekşi mayalı ekmek (ince dilimlenmiş, 16 dilim)'], ['3 yemek kaşığı', 'zeytinyağı'], ['1,5 su bardağı', 'humus (hazır ya da ev yapımı)'], ['2 adet', 'olgun avokado'],
