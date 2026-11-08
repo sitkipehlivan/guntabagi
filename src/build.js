@@ -113,6 +113,14 @@ const reklam = (ad, cls = '') => `<div class="reklam ${cls}" data-advance-slot="
 
 
 
+
+// ---------- Gün Öncesi Panik Hattı (YAKINDA — e-posta toplanmaz) ----------
+const panikHatti = () => `<section class="bolum panik" id="panik-hatti"><div class="kap"><div class="davet panik-kutu">
+<div class="panik-yazi"><span class="rozet koyu-r">YAKINDA</span><h2 style="margin-top:12px">Gün Öncesi Panik Hattı</h2>
+<p>Hafta sonu gün sende mi? Çok yakında her perşembe sabahı hazır menü, alışveriş listesi, haftanın trend tarifi ve bir tutam dedikodu gelen kutuna gelecek. Panik bizden, alkış senden.</p></div>
+<div class="panik-yakinda"><div class="el">Çaydanlık ocakta, az kaldı.</div><p>Panik Hattı açıldığında burada haber vereceğiz. O zamana kadar menünü kendin oluştur.</p><a class="btn dolu" href="/#menu">Gün menümü oluştur</a></div>
+</div></div></section>`;
+
 // ---------- Ana sayfa ----------
 const heroSvg = `<svg viewBox="0 0 440 440" role="img" aria-label="Börek, köfte ve tatlı dizilmiş bir gün tabağı çizimi"><circle cx="220" cy="220" r="210" fill="#F6D5D5"/><circle cx="220" cy="220" r="180" fill="#FFFFFF" stroke="#EBD3C6" stroke-width="2"/><circle cx="220" cy="220" r="160" fill="none" stroke="#C9952E" stroke-width="2" stroke-dasharray="3 6"/><path d="M150 140 l60 -20 l-10 62 z" fill="#E9B872" stroke="#B9822F" stroke-width="2"/><path d="M120 200 l58 -14 l-14 58 z" fill="#E9B872" stroke="#B9822F" stroke-width="2"/><ellipse cx="290" cy="150" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 290 150)"/><ellipse cx="320" cy="190" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 320 190)"/><ellipse cx="280" cy="200" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 280 200)"/><rect x="170" y="260" width="110" height="70" rx="10" fill="#7A4A2E"/><rect x="170" y="260" width="110" height="22" rx="10" fill="#F3E6D3"/><circle cx="300" cy="290" r="9" fill="#5C7A3A"/><circle cx="314" cy="276" r="7" fill="#5C7A3A"/><circle cx="140" cy="280" r="8" fill="#5C7A3A"/><circle cx="230" cy="215" r="6" fill="#5C7A3A"/></svg>`;
 
@@ -210,6 +218,8 @@ ${sozlukBolum(6)}
 <ol>${D.sunum.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
 </div></div></section>
 
+
+${panikHatti()}
 
 <section class="bolum" style="padding-top:0"><div class="kap"><div class="davet">
 <div style="flex:1 1 380px;min-width:0"><h2>Senin de bir gün tarifin mi var?</h2><p>Herkesin tarifini sorduğu o börek, o kurabiye... Bize yaz, en muzip notlarla Gün Tabağı'nda yayınlayalım.</p></div>
@@ -315,7 +325,7 @@ ${reklam('tarif-ici-mobil-320x100')}
 // ---------- Diğer sayfalar ----------
 const trendSayfa = sayfa({
   baslik: 'Trend Köşesi | İnternetin tarifleri, gün versiyonuyla | Gün Tabağı', aciklama: 'Her hafta sosyal medyada konuşulan tarifi gün sofrasına uyarlıyoruz.', yol: '/trend-kosesi/', aktif: '/trend-kosesi/',
-  govde: `${trendBolum}`
+  govde: `${trendBolum}${panikHatti()}`
 });
 const sozlukSayfa = sayfa({
   baslik: 'Gün Sözlüğü | Gün dilinden Türkçeye | Gün Tabağı', aciklama: '"Zahmet etmeseydin" ne demek? Gün sofrasında söylenenlerin gerçek anlamları.', yol: '/gun-sozlugu/', aktif: '/gun-sozlugu/',
