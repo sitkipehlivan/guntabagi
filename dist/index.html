@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=DM+Sans:opsz,wght@9..40,400..700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=cdee6e18">
+<link rel="stylesheet" href="/assets/style.css?v=3c75d283">
 
 </head>
 <body>
@@ -27,7 +27,7 @@
 <div class="bant">Uyarı: Bu sitedeki kalori bilgileri yalnızca misafirler için geçerlidir. Ev sahibi gün boyu ayakta olduğundan yaktığı kabul edilir.</div>
 <header class="ust"><div class="kap">
 <a class="logo" href="/" aria-label="Gün Tabağı ana sayfa"><svg width="44" height="44" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#FFFFFF" stroke="#8E1F3D" stroke-width="2.5"/><circle cx="24" cy="24" r="16" fill="none" stroke="#C9952E" stroke-width="1.5" stroke-dasharray="2 3"/><circle cx="24" cy="24" r="9" fill="#F6D5D5"/></svg><span>gün tabağı</span></a>
-<nav class="menu" aria-label="Ana menü"><a href="/tarifler/">Tarifler</a><a href="/#menu">Gün Menüsü Oluştur</a><a href="/trend-kosesi/">Trend Köşesi</a><a href="/gun-sozlugu/">Gün Sözlüğü</a><a href="/#sunum">Sunum Sanatı</a></nav>
+<nav class="menu" aria-label="Ana menü"><a href="/tarifler/">Tarifler</a><a href="/beyaz-yaka-gunu/">Beyaz Yaka Günü</a><a href="/#menu">Gün Menüsü Oluştur</a><a href="/trend-kosesi/">Trend Köşesi</a><a href="/gun-sozlugu/">Gün Sözlüğü</a><a href="/#sunum">Sunum Sanatı</a></nav>
 </div></header>
 <main id="icerik">
 
@@ -42,21 +42,22 @@
 <section class="koyu" id="menu"><div class="kap bolum">
 <div class="mo" id="menu-olusturucu">
 <div class="mo-sol"><div><div class="el">30 saniyelik kurtuluş</div><h2 style="font-size:clamp(34px,4.5vw,48px);margin-top:4px">Gün Menüsü Oluşturucu</h2><p>Üç soru, bir menü. Gerisi senin elinin lezzetine kalmış.</p></div>
+<fieldset><legend>Kimler geliyor?</legend><div class="secenekler"><button type="button" class="secenek" data-grup="kim" data-deger="mahalle" aria-pressed="true">Komşular & akrabalar</button><button type="button" class="secenek" data-grup="kim" data-deger="ofis" aria-pressed="false">Ofis ekibi (beyaz yaka modu)</button></div></fieldset>
 <fieldset><legend>Kaç kişi geliyor?</legend><div class="secenekler"><button type="button" class="secenek" data-grup="kisi" data-deger="az" aria-pressed="false">4–6 (samimi)</button><button type="button" class="secenek" data-grup="kisi" data-deger="orta" aria-pressed="true">7–10 (klasik gün)</button><button type="button" class="secenek" data-grup="kisi" data-deger="cok" aria-pressed="false">11+ (bütün site geliyor)</button></div></fieldset>
 <fieldset><legend>Ne kadar vaktin var?</legend><div class="secenekler"><button type="button" class="secenek" data-grup="vakit" data-deger="dun" aria-pressed="true">Dün akşam haber verdiler</button><button type="button" class="secenek" data-grup="vakit" data-deger="gun" aria-pressed="false">Bir günüm var</button><button type="button" class="secenek" data-grup="vakit" data-deger="hafta" aria-pressed="false">Bir haftadır hazırlanıyorum</button></div></fieldset>
-<fieldset><legend>Bütçe durumu?</legend><div class="secenekler"><button type="button" class="secenek" data-grup="butce" data-deger="ay" aria-pressed="true">Ay sonu</button><button type="button" class="secenek" data-grup="butce" data-deger="maas" aria-pressed="false">Maaş yattı</button><button type="button" class="secenek" data-grup="butce" data-deger="altin" aria-pressed="false">Altın günü, rezil olamam</button></div></fieldset>
+<fieldset><legend>Bütçe durumu?</legend><div class="secenekler"><button type="button" class="secenek" data-grup="butce" data-deger="ay" aria-pressed="true">Ay sonu</button><button type="button" class="secenek" data-grup="butce" data-deger="maas" aria-pressed="false">Maaş yattı</button><button type="button" class="secenek" data-grup="butce" data-deger="altin" aria-pressed="false">Altın günü, rezil olamam</button><button type="button" class="secenek" data-grup="butce" data-deger="koca" aria-pressed="false">Kocam bütçe ayırdı</button></div></fieldset>
 </div>
 <div class="mo-sonuc" aria-live="polite"><div class="ust-satir"><h3>Senin gün menün</h3><span class="el" data-etiket></span></div>
 <ol class="mo-liste"></ol>
 <div class="strateji"><strong>Gün stratejisi:</strong> <span data-strateji></span></div></div>
 </div>
-<script type="application/json" id="menu-veri">{"dun":[{"slug":"patatesli-milfoy-borek","ad":"Patatesli Milföy Börek"},{"slug":"yalanci-tiramisu","ad":"Yalancı Tiramisu"},{"slug":"ocaksiz-kisir","ad":"Kısır"},{"slug":"haydari","ad":"Haydari"}],"gun":[{"slug":"ispanakli-borek","ad":"Ispanaklı Börek"},{"slug":"mercimek-koftesi","ad":"Mercimek Köftesi"},{"slug":"havuc-tarator","ad":"Havuç Tarator"},{"slug":"etimek-tatlisi","ad":"Etimek Tatlısı"}],"hafta":[{"slug":"su-boregi","ad":"Su Böreği"},{"slug":"icli-kofte","ad":"İçli Köfte"},{"slug":"visneli-nar-eksili-zeytinyagli-sarma","ad":"Vişneli Zeytinyağlı Sarma"},{"slug":"profiterol","ad":"Profiterol"}]}</script>
+<script type="application/json" id="menu-veri">{"dun":[{"slug":"patatesli-milfoy-borek","ad":"Patatesli Milföy Börek"},{"slug":"yalanci-tiramisu","ad":"Yalancı Tiramisu"},{"slug":"ocaksiz-kisir","ad":"Kısır"},{"slug":"haydari","ad":"Haydari"}],"gun":[{"slug":"ispanakli-borek","ad":"Ispanaklı Börek"},{"slug":"mercimek-koftesi","ad":"Mercimek Köftesi"},{"slug":"havuc-tarator","ad":"Havuç Tarator"},{"slug":"etimek-tatlisi","ad":"Etimek Tatlısı"}],"hafta":[{"slug":"su-boregi","ad":"Su Böreği"},{"slug":"icli-kofte","ad":"İçli Köfte"},{"slug":"visneli-nar-eksili-zeytinyagli-sarma","ad":"Vişneli Zeytinyağlı Sarma"},{"slug":"profiterol","ad":"Profiterol"}],"plaza":[{"slug":"keci-peynirli-balli-mini-borek","ad":"Keçi Peynirli Ballı Mini Börek"},{"slug":"narli-kisir","ad":"Narlı Kısır (Plaza Usulü)"},{"slug":"avokadolu-humuslu-crostini","ad":"Avokadolu Humuslu Crostini"},{"slug":"mascarponeli-tiramisu-kuplari","ad":"Mascarponeli Tiramisu Kupları"}]}</script>
 </div></section>
 
 <div class="reklam " data-advance-slot="anasayfa-orta-mobil"></div>
 
 <section class="bolum" id="tarifler"><div class="kap">
-<div class="bolum-bas"><div><div class="el">Kayınvalide testinden geçenler</div><h2>Bu haftanın gün tabağı</h2></div><a href="/tarifler/" style="font-weight:600">Bütün tarifler (42)</a></div>
+<div class="bolum-bas"><div><div class="el">Kayınvalide testinden geçenler</div><h2>Bu haftanın gün tabağı</h2></div><a href="/tarifler/" style="font-weight:600">Bütün tarifler (50)</a></div>
 <div class="izgara"><a class="kart" href="/tarif/patatesli-milfoy-borek/" data-kategori="borek" data-ara="Patatesli Milföy Börek Börek &amp; Hamur İşi Bir gece önceden yapılır">
 <div class="foto"><img src="/img/tarifler/patatesli-milfoy-borek.jpg" alt="Patatesli Milföy Börek" loading="lazy" width="700" height="525"></div>
 <div class="ic"><span class="rozet">Bir gece önceden yapılır</span><h3>Patatesli Milföy Börek</h3><p>Aceleci ev sahibinin can simidi. Zil çalınca fırından yeni çıkmış gibi yaparsın, kimse hazır hamur olduğunu anlamaz.</p>
@@ -78,9 +79,29 @@
 <div class="alt"><span>35 dk · Börek &amp; Hamur İşi</span><span>Kayınvalide onayı <strong>5/5</strong></span></div></div></a></div>
 </div></section>
 
+
+<section class="bolum beyaz-yaka" id="beyaz-yaka"><div class="kap">
+<div class="by-kutu"><div class="by-yazi"><span class="rozet koyu-r">YENİ KATEGORİ</span><h2>Beyaz Yaka Günü</h2>
+<p>Labne yerine mascarpone, nar ekşisi yerine nar tanesi, mayonez yerine Dijon hardalı. Gün sofrasının plaza usulü versiyonu: tartoletler, chia kupları ve vegan tabaklarla.</p>
+<a class="btn dolu" href="/beyaz-yaka-gunu/">Bütün beyaz yaka tarifleri</a></div></div>
+<div class="izgara"><a class="kart" href="/tarif/mascarponeli-tiramisu-kuplari/" data-kategori="beyazyaka" data-ara="Mascarponeli Tiramisu Kupları Beyaz Yaka Günü Labne yerine mascarpone">
+<div class="foto"><img src="/img/tarifler/mascarponeli-tiramisu-kuplari.jpg" alt="Mascarponeli Tiramisu Kupları" loading="lazy" width="700" height="525"></div>
+<div class="ic"><span class="rozet">Labne yerine mascarpone</span><h3>Mascarponeli Tiramisu Kupları</h3><p>Labne değil, mascarpone. Pötibör değil, kedidili. Yalancı tiramisunun terfi almış, kendi odasına geçmiş hali.</p>
+<div class="alt"><span>25 dk · Beyaz Yaka Günü</span><span>Kayınvalide onayı <strong>2/5</strong></span></div></div></a><a class="kart" href="/tarif/narli-kisir/" data-kategori="beyazyaka" data-ara="Narlı Kısır (Plaza Usulü) Beyaz Yaka Günü Nar ekşisi değil, nar tanesi">
+<div class="foto"><img src="/img/tarifler/narli-kisir.jpg" alt="Narlı Kısır (Plaza Usulü)" loading="lazy" width="700" height="525"></div>
+<div class="ic"><span class="rozet">Nar ekşisi değil, nar tanesi</span><h3>Narlı Kısır (Plaza Usulü)</h3><p>Kısır, nar taneleri, roka ve cevizle bir kariyer basamağı atladı. Annenin kısırı kızmasın, bu sadece kurumsal versiyonu.</p>
+<div class="alt"><span>25 dk · Beyaz Yaka Günü</span><span>Kayınvalide onayı <strong>3/5</strong></span></div></div></a><a class="kart" href="/tarif/hardalli-patates-salatasi/" data-kategori="beyazyaka" data-ara="Hardallı Patates Salatası Beyaz Yaka Günü Dijon'lu terfi">
+<div class="foto"><img src="/img/tarifler/hardalli-patates-salatasi.jpg" alt="Hardallı Patates Salatası" loading="lazy" width="700" height="525"></div>
+<div class="ic"><span class="rozet">Dijon'lu terfi</span><h3>Hardallı Patates Salatası</h3><p>Dijon hardalı, kapari ve frenk soğanı. Patates salatası Fransa'da yüksek lisans yapıp dönmüş gibi.</p>
+<div class="alt"><span>35 dk · Beyaz Yaka Günü</span><span>Kayınvalide onayı <strong>3/5</strong></span></div></div></a><a class="kart" href="/tarif/mascarponeli-meyveli-tartolet/" data-kategori="beyazyaka" data-ara="Mascarponeli Meyveli Mini Tartolet Beyaz Yaka Günü Pastane vitrini etkisi">
+<div class="foto"><img src="/img/tarifler/mascarponeli-meyveli-tartolet.jpg" alt="Mascarponeli Meyveli Mini Tartolet" loading="lazy" width="700" height="525"></div>
+<div class="ic"><span class="rozet">Pastane vitrini etkisi</span><h3>Mascarponeli Meyveli Mini Tartolet</h3><p>Hazır tartolet kabı, mascarpone kreması, taze meyve. Pastane vitrini, senin mutfağında, yirmi dakikada.</p>
+<div class="alt"><span>20 dk · Beyaz Yaka Günü</span><span>Kayınvalide onayı <strong>3/5</strong></span></div></div></a></div>
+</div></section>
+
 <section class="bolum" style="padding-top:0"><div class="kap">
 <div class="bolum-bas"><div><div class="el">Ne arıyordun?</div><h2>Kategoriler</h2></div></div>
-<div class="filtre"><a class="btn" href="/tarifler/?k=borek">Börek & Hamur İşi</a><a class="btn" href="/tarifler/?k=meze">Meze & Salata</a><a class="btn" href="/tarifler/?k=arasicak">Ara Sıcak</a><a class="btn" href="/tarifler/?k=zeytinyagli">Zeytinyağlı</a><a class="btn" href="/tarifler/?k=tatli">Tatlı</a><a class="btn" href="/tarifler/?k=kurabiye">Kurabiye & Kek</a></div>
+<div class="filtre"><a class="btn" href="/tarifler/?k=borek">Börek & Hamur İşi</a><a class="btn" href="/tarifler/?k=meze">Meze & Salata</a><a class="btn" href="/tarifler/?k=arasicak">Ara Sıcak</a><a class="btn" href="/tarifler/?k=zeytinyagli">Zeytinyağlı</a><a class="btn" href="/tarifler/?k=tatli">Tatlı</a><a class="btn" href="/tarifler/?k=kurabiye">Kurabiye & Kek</a><a class="btn" href="/tarifler/?k=beyazyaka">Beyaz Yaka Günü</a></div>
 </div></section>
 
 <section class="bolum" id="trend"><div class="kap"><div class="trend-kutu">
@@ -127,6 +148,6 @@
 <p style="font-size:13px;opacity:.8">© 2026 Gün Tabağı. Tarifler ve metinler izinsiz kopyalanamaz; kopyalayanın börekleri açılır.</p></div>
 <nav aria-label="Alt menü"><a href="/kunye/">Künye</a><a href="/kvkk/">KVKK Aydınlatma Metni</a><a href="/cerez-politikasi/">Çerez Politikası</a><a href="/reklam/">Reklam</a><a href="mailto:merhaba@guntabagi.com.tr">İletişim</a></nav>
 </div></footer>
-<script src="/assets/app.js?v=eb8c570c" defer></script>
+<script src="/assets/app.js?v=af213134" defer></script>
 </body>
 </html>

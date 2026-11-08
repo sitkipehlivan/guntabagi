@@ -10,7 +10,8 @@ const kategoriler = [
   { id: 'arasicak', ad: 'Ara Sıcak' },
   { id: 'zeytinyagli', ad: 'Zeytinyağlı' },
   { id: 'tatli', ad: 'Tatlı' },
-  { id: 'kurabiye', ad: 'Kurabiye & Kek' }
+  { id: 'kurabiye', ad: 'Kurabiye & Kek' },
+  { id: 'beyazyaka', ad: 'Beyaz Yaka Günü' }
 ];
 
 // ---------- Tarifin tamamı burada olanlar ----------
@@ -219,6 +220,8 @@ const tamTarifler = [
   }
 ];
 
+tamTarifler.push(...require('./beyazyaka'));
+
 // ---------- Mesai Mutfak'tan gelen gün klasikleri ----------
 // [slug, ad, kategori, süre(dk), spot, rozet, onay, ipucu]
 const mmHam = [
@@ -272,6 +275,8 @@ tamTarifler.forEach((t) => {
 
 const tumTarifler = [...tamTarifler, ...mmTarifler];
 
+const beyazYakaSecki = ['mascarponeli-tiramisu-kuplari', 'narli-kisir', 'hardalli-patates-salatasi', 'mascarponeli-meyveli-tartolet', 'mangolu-chia-puding', 'avokadolu-humuslu-crostini', 'firin-sebzeli-kinoa-salatasi', 'keci-peynirli-balli-mini-borek'];
+
 const haftaninTabagi = ['patatesli-milfoy-borek', 'yalanci-tiramisu', 'ocaksiz-kisir', 'mercimek-koftesi', 'havuc-tarator', 'pacanga-boregi'];
 
 const sozluk = [
@@ -301,7 +306,8 @@ const sunum = [
 const menuler = {
   dun: ['patatesli-milfoy-borek', 'yalanci-tiramisu', 'ocaksiz-kisir', 'haydari'],
   gun: ['ispanakli-borek', 'mercimek-koftesi', 'havuc-tarator', 'etimek-tatlisi'],
-  hafta: ['su-boregi', 'icli-kofte', 'visneli-nar-eksili-zeytinyagli-sarma', 'profiterol']
+  hafta: ['su-boregi', 'icli-kofte', 'visneli-nar-eksili-zeytinyagli-sarma', 'profiterol'],
+  plaza: ['keci-peynirli-balli-mini-borek', 'narli-kisir', 'avokadolu-humuslu-crostini', 'mascarponeli-tiramisu-kuplari']
 };
 
-module.exports = { kategoriler, tamTarifler, mmTarifler, tumTarifler, haftaninTabagi, sozluk, sunum, menuler };
+module.exports = { beyazYakaSecki, kategoriler, tamTarifler, mmTarifler, tumTarifler, haftaninTabagi, sozluk, sunum, menuler };

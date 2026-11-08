@@ -209,3 +209,12 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0;line-height:1.08}
 /* Ana sayfa gün tabağı fotoğrafı */
 .hero-foto{width:100%;height:auto;max-width:500px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;box-shadow:0 0 0 14px var(--pudra),0 24px 48px rgba(42,26,31,.18)}
 @media (max-width:760px){.hero-foto{max-width:340px;box-shadow:0 0 0 10px var(--pudra),0 16px 32px rgba(42,26,31,.16)}.not-kagidi{right:0;bottom:-10px;max-width:160px;padding:10px 12px}.not-kagidi .el{font-size:18px}}
+
+/* Beyaz Yaka Günü */
+.by-kutu{background:var(--beyaz);border:1.5px solid var(--cay);border-radius:28px;padding:40px;margin-bottom:28px;box-shadow:6px 6px 0 var(--visne)}
+.by-yazi{max-width:720px;display:flex;flex-direction:column;gap:14px}
+.by-yazi h1,.by-yazi h2{font-size:clamp(36px,5vw,56px);letter-spacing:-1px}
+.by-yazi p{margin:0;color:var(--metin2);font-size:18px}
+.by-yazi .btn{align-self:flex-start}
+.by-not{font-size:15px!important;color:var(--metin3)!important}
+@media (max-width:600px){.by-kutu{padding:24px}}

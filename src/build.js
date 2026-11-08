@@ -52,7 +52,7 @@ ${[[360, 260], [440, 280], [400, 340], [470, 230]].map(([x, y]) => `<path d="M${
 
 // ---------- Ortak şablon ----------
 const nav = [
-  ['/tarifler/', 'Tarifler'], ['/#menu', 'Gün Menüsü Oluştur'], ['/trend-kosesi/', 'Trend Köşesi'], ['/gun-sozlugu/', 'Gün Sözlüğü'], ['/#sunum', 'Sunum Sanatı']
+  ['/tarifler/', 'Tarifler'], ['/beyaz-yaka-gunu/', 'Beyaz Yaka Günü'], ['/#menu', 'Gün Menüsü Oluştur'], ['/trend-kosesi/', 'Trend Köşesi'], ['/gun-sozlugu/', 'Gün Sözlüğü'], ['/#sunum', 'Sunum Sanatı']
 ];
 function sayfa({ baslik, aciklama, yol, govde, aktif = '', ekHead = '', gorsel = '/og.png', tip = 'website' }) {
   const canon = SITE + yol;
@@ -166,9 +166,10 @@ const anasayfa = sayfa({
 <section class="koyu" id="menu"><div class="kap bolum">
 <div class="mo" id="menu-olusturucu">
 <div class="mo-sol"><div><div class="el">30 saniyelik kurtuluş</div><h2 style="font-size:clamp(34px,4.5vw,48px);margin-top:4px">Gün Menüsü Oluşturucu</h2><p>Üç soru, bir menü. Gerisi senin elinin lezzetine kalmış.</p></div>
+<fieldset><legend>Kimler geliyor?</legend><div class="secenekler">${secenek('kim', 'mahalle', 'Komşular & akrabalar', true)}${secenek('kim', 'ofis', 'Ofis ekibi (beyaz yaka modu)', false)}</div></fieldset>
 <fieldset><legend>Kaç kişi geliyor?</legend><div class="secenekler">${secenek('kisi', 'az', '4–6 (samimi)', false)}${secenek('kisi', 'orta', '7–10 (klasik gün)', true)}${secenek('kisi', 'cok', '11+ (bütün site geliyor)', false)}</div></fieldset>
 <fieldset><legend>Ne kadar vaktin var?</legend><div class="secenekler">${secenek('vakit', 'dun', 'Dün akşam haber verdiler', true)}${secenek('vakit', 'gun', 'Bir günüm var', false)}${secenek('vakit', 'hafta', 'Bir haftadır hazırlanıyorum', false)}</div></fieldset>
-<fieldset><legend>Bütçe durumu?</legend><div class="secenekler">${secenek('butce', 'ay', 'Ay sonu', true)}${secenek('butce', 'maas', 'Maaş yattı', false)}${secenek('butce', 'altin', 'Altın günü, rezil olamam', false)}</div></fieldset>
+<fieldset><legend>Bütçe durumu?</legend><div class="secenekler">${secenek('butce', 'ay', 'Ay sonu', true)}${secenek('butce', 'maas', 'Maaş yattı', false)}${secenek('butce', 'altin', 'Altın günü, rezil olamam', false)}${secenek('butce', 'koca', 'Kocam bütçe ayırdı', false)}</div></fieldset>
 </div>
 <div class="mo-sonuc" aria-live="polite"><div class="ust-satir"><h3>Senin gün menün</h3><span class="el" data-etiket></span></div>
 <ol class="mo-liste"></ol>
@@ -182,6 +183,14 @@ ${reklam('anasayfa-orta-mobil')}
 <section class="bolum" id="tarifler"><div class="kap">
 <div class="bolum-bas"><div><div class="el">Kayınvalide testinden geçenler</div><h2>Bu haftanın gün tabağı</h2></div><a href="/tarifler/" style="font-weight:600">Bütün tarifler (${D.tumTarifler.length})</a></div>
 <div class="izgara">${D.haftaninTabagi.map((s) => kart(bul(s))).join('')}</div>
+</div></section>
+
+
+<section class="bolum beyaz-yaka" id="beyaz-yaka"><div class="kap">
+<div class="by-kutu"><div class="by-yazi"><span class="rozet koyu-r">YENİ KATEGORİ</span><h2>Beyaz Yaka Günü</h2>
+<p>Labne yerine mascarpone, nar ekşisi yerine nar tanesi, mayonez yerine Dijon hardalı. Gün sofrasının plaza usulü versiyonu: tartoletler, chia kupları ve vegan tabaklarla.</p>
+<a class="btn dolu" href="/beyaz-yaka-gunu/">Bütün beyaz yaka tarifleri</a></div></div>
+<div class="izgara">${D.beyazYakaSecki.slice(0, 4).map((s) => kart(bul(s))).join('')}</div>
 </div></section>
 
 <section class="bolum" style="padding-top:0"><div class="kap">
@@ -333,6 +342,20 @@ const reklamSayfa = metinSayfa('/reklam/', 'Reklam', 'Gün Tabağı reklam ve i�
 <p>Gün Tabağı bir Advance Digital yayınıdır. Reklam ve iş birlikleri için: <a href="mailto:merhaba@guntabagi.com.tr?subject=Reklam">merhaba@guntabagi.com.tr</a></p>`);
 
 
+
+const beyazYakaSayfa = sayfa({
+  baslik: 'Beyaz Yaka Günü Tarifleri | Plaza usulü gün sofrası | Gün Tabağı',
+  aciklama: 'Mascarponeli tiramisu kupları, narlı kısır, hardallı patates salatası, tartoletler, chia puding ve vegan tabaklar: gün sofrasının beyaz yaka versiyonu.',
+  yol: '/beyaz-yaka-gunu/', aktif: '/beyaz-yaka-gunu/',
+  govde: `<section class="bolum"><div class="kap">
+<div class="by-kutu" style="margin-bottom:34px"><div class="by-yazi"><div class="el">Plaza usulü gün sofrası</div><h1>Beyaz Yaka Günü</h1>
+<p>Gün bu ay ofis ekibinde mi? Labneyi mascarponeyle, nar ekşisini nar tanesiyle, mayonezi Dijon hardalıyla değiştirdik. Tartoletler, chia kupları, vegan tabaklar: hepsi toplantı arasında hazırlanabilir, hepsi LinkedIn'e layık.</p>
+<p class="by-not">Menü oluşturucuda "Ofis ekibi" seçersen sana hazır bir beyaz yaka menüsü çıkarırız.</p>
+<a class="btn dolu" href="/#menu">Beyaz yaka menümü oluştur</a></div></div>
+<div class="izgara">${D.beyazYakaSecki.map((s) => kart(bul(s))).join('')}</div>
+</div></section>${panikHatti('beyaz-yaka')}`
+});
+
 const tesekkur = sayfa({
   baslik: 'Panik Hattına hoş geldin | Gün Tabağı', aciklama: 'Gün Öncesi Panik Hattı kaydın alındı.', yol: '/tesekkurler/',
   ekHead: '<meta name="robots" content="noindex">',
@@ -357,11 +380,12 @@ yaz('cerez-politikasi/index.html', cerez);
 yaz('reklam/index.html', reklamSayfa);
 yaz('404.html', bulunamadi);
 yaz('tesekkurler/index.html', tesekkur);
+yaz('beyaz-yaka-gunu/index.html', beyazYakaSayfa);
 D.tamTarifler.forEach((t) => { yaz(`img/tarifler/${t.slug}.svg`, cizimler[t.cizim]()); yaz(`tarif/${t.slug}/index.html`, tamSayfa(t)); });
 D.mmTarifler.forEach((t) => yaz(`tarif/${t.slug}/index.html`, mmSayfa(t)));
 yaz('favicon.svg', logoSvg(48).replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '));
 
-const urls = ['/', '/tarifler/', '/trend-kosesi/', '/gun-sozlugu/', '/kunye/', '/kvkk/', '/cerez-politikasi/', '/reklam/', ...D.tumTarifler.map((t) => `/tarif/${t.slug}/`)];
+const urls = ['/', '/tarifler/', '/beyaz-yaka-gunu/', '/trend-kosesi/', '/gun-sozlugu/', '/kunye/', '/kvkk/', '/cerez-politikasi/', '/reklam/', ...D.tumTarifler.map((t) => `/tarif/${t.slug}/`)];
 yaz('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc><lastmod>2026-11-08</lastmod></url>`).join('\n')}\n</urlset>\n`);
 yaz('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 yaz('netlify.toml', `[build]\n  publish = "."\n\n[[headers]]\n  for = "/*"\n  [headers.values]\n    X-Content-Type-Options = "nosniff"\n    Referrer-Policy = "strict-origin-when-cross-origin"\n    X-Frame-Options = "SAMEORIGIN"\n\n[[headers]]\n  for = "/assets/*"\n  [headers.values]\n    Cache-Control = "public, max-age=604800"\n\n[[headers]]\n  for = "/img/*"\n  [headers.values]\n    Cache-Control = "public, max-age=2592000"\n`);
