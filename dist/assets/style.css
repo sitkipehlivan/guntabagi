@@ -205,3 +205,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0;line-height:1.08}
 .onay input{flex:0 0 auto;width:20px;height:20px;margin:1px 0 0;accent-color:var(--visne)}
 .tarif-duzen + .panik{padding-top:10px}
 @media (max-width:600px){.davet{padding:24px}.davet h2{font-size:28px}.panik-satir .btn{width:100%}}
+
+/* Ana sayfa gün tabağı fotoğrafı */
+.hero-foto{width:100%;height:auto;max-width:500px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;box-shadow:0 0 0 14px var(--pudra),0 24px 48px rgba(42,26,31,.18)}
+@media (max-width:760px){.hero-foto{max-width:340px;box-shadow:0 0 0 10px var(--pudra),0 16px 32px rgba(42,26,31,.16)}.not-kagidi{right:0;bottom:-10px;max-width:160px;padding:10px 12px}.not-kagidi .el{font-size:18px}}

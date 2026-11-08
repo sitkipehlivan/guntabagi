@@ -125,6 +125,11 @@ const panikHatti = (kaynak) => `<section class="bolum panik" id="panik-hatti"><d
 // ---------- Ana sayfa ----------
 const heroSvg = `<svg viewBox="0 0 440 440" role="img" aria-label="Börek, köfte ve tatlı dizilmiş bir gün tabağı çizimi"><circle cx="220" cy="220" r="210" fill="#F6D5D5"/><circle cx="220" cy="220" r="180" fill="#FFFFFF" stroke="#EBD3C6" stroke-width="2"/><circle cx="220" cy="220" r="160" fill="none" stroke="#C9952E" stroke-width="2" stroke-dasharray="3 6"/><path d="M150 140 l60 -20 l-10 62 z" fill="#E9B872" stroke="#B9822F" stroke-width="2"/><path d="M120 200 l58 -14 l-14 58 z" fill="#E9B872" stroke="#B9822F" stroke-width="2"/><ellipse cx="290" cy="150" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 290 150)"/><ellipse cx="320" cy="190" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 320 190)"/><ellipse cx="280" cy="200" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 280 200)"/><rect x="170" y="260" width="110" height="70" rx="10" fill="#7A4A2E"/><rect x="170" y="260" width="110" height="22" rx="10" fill="#F3E6D3"/><circle cx="300" cy="290" r="9" fill="#5C7A3A"/><circle cx="314" cy="276" r="7" fill="#5C7A3A"/><circle cx="140" cy="280" r="8" fill="#5C7A3A"/><circle cx="230" cy="215" r="6" fill="#5C7A3A"/></svg>`;
 
+const heroJpg = path.join(__dirname, 'static', 'img', 'gun-tabagi-hero.jpg');
+const heroGorsel = fs.existsSync(heroJpg)
+  ? '<img class="hero-foto" src="/img/gun-tabagi-hero.jpg" alt="Börek, yaprak sarma, kısır ve tatlıyla dolu tam takım bir gün tabağı" width="1200" height="1200" fetchpriority="high">'
+  : heroSvg;
+
 const secenek = (grup, deger, label, on) => `<button type="button" class="secenek" data-grup="${grup}" data-deger="${deger}" aria-pressed="${on}">${label}</button>`;
 const menuVeri = Object.fromEntries(Object.entries(D.menuler).map(([k, v]) => [k, v.map((s) => ({ slug: s, ad: bul(s).ad }))]));
 
@@ -153,7 +158,7 @@ const anasayfa = sayfa({
 <h1>Panik yok,<br>tabak bizde.</h1>
 <p>Kayınvalideyi sessizleştiren, komşuyu kıskandıran, "tarifini atar mısın?" dedirten gün tarifleri. Her hafta güncel, her zaman biraz muzip.</p>
 <div class="hero-btns"><a class="btn dolu" href="#menu">Gün menümü oluştur</a><a class="btn" href="/tarifler/">Bütün tarifler</a></div></div>
-<div class="hero-gorsel">${heroSvg}<div class="not-kagidi"><div class="el">Tabakta bir şey kalırsa tarif bizden değil, misafirden.</div></div></div>
+<div class="hero-gorsel">${heroGorsel}<div class="not-kagidi"><div class="el">Tabakta bir şey kalırsa tarif bizden değil, misafirden.</div></div></div>
 </div></section>
 
 <section class="koyu" id="menu"><div class="kap bolum">
