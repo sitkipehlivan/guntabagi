@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guntabagi.com.tr/sitemap.xml
