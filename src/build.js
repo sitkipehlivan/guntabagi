@@ -111,22 +111,7 @@ const kart = (t) => `<a class="kart" href="/tarif/${t.slug}/" data-kategori="${t
 const reklam = (ad, cls = '') => `<div class="reklam ${cls}" data-advance-slot="${ad}"></div>`;
 
 
-// ---------- Gün Öncesi Panik Hattı (bülten) ----------
-const panikHatti = (kaynak) => `<section class="bolum panik" id="panik-hatti"><div class="kap"><div class="davet panik-kutu">
-<div class="panik-yazi"><div class="el">Her perşembe, gelen kutuna</div><h2>Gün Öncesi Panik Hattı</h2>
-<p>Hafta sonu gün sende mi? Perşembe sabahı hazır menü, alışveriş listesi, haftanın trend tarifi ve bir tutam dedikodu gelsin. Panik bizden, alkış senden.</p></div>
-<form class="panik-form" name="panik-hatti" method="POST" action="/tesekkurler/" data-netlify="true" netlify-honeypot="adres-alani">
-<input type="hidden" name="form-name" value="panik-hatti"><input type="hidden" name="kaynak" value="${kaynak}">
-<p class="gizli"><label>Bu alanı boş bırak <input name="adres-alani" tabindex="-1" autocomplete="off"></label></p>
-<div class="panik-satir"><label class="gizli" for="adsoyad-${kaynak}">Adın soyadın</label>
-<input id="adsoyad-${kaynak}" type="text" name="ad-soyad" required autocomplete="name" maxlength="80" placeholder="Adın soyadın">
-<label class="gizli" for="eposta-${kaynak}">E-posta adresin</label>
-<input id="eposta-${kaynak}" type="email" name="eposta" required autocomplete="email" placeholder="E-posta adresin">
-<button type="submit" class="btn dolu">Beni de ekle</button></div>
-<input type="hidden" name="onay-metni" value="panik-hatti-v3-2026-11-08">
-<label class="onay"><input type="checkbox" name="eposta-onayi" value="evet" required>
-<span>Gün Tabağı'nın her hafta gönderdiği tarif bültenini almak istiyorum. Bültende iş birliği yapılan markaların <strong>reklam ve kampanyalarına</strong> da yer verileceğini biliyorum ve bu içerikleri taşıyan ticari elektronik iletileri almaya onay veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum. Onayımı her e-postadaki "abonelikten çık" bağlantısıyla geri alabilirim.</span></label>
-</form></div></div></section>`;
+
 
 // ---------- Ana sayfa ----------
 const heroSvg = `<svg viewBox="0 0 440 440" role="img" aria-label="Börek, köfte ve tatlı dizilmiş bir gün tabağı çizimi"><circle cx="220" cy="220" r="210" fill="#F6D5D5"/><circle cx="220" cy="220" r="180" fill="#FFFFFF" stroke="#EBD3C6" stroke-width="2"/><circle cx="220" cy="220" r="160" fill="none" stroke="#C9952E" stroke-width="2" stroke-dasharray="3 6"/><path d="M150 140 l60 -20 l-10 62 z" fill="#E9B872" stroke="#B9822F" stroke-width="2"/><path d="M120 200 l58 -14 l-14 58 z" fill="#E9B872" stroke="#B9822F" stroke-width="2"/><ellipse cx="290" cy="150" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 290 150)"/><ellipse cx="320" cy="190" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 320 190)"/><ellipse cx="280" cy="200" rx="26" ry="14" fill="#C2562F" transform="rotate(-20 280 200)"/><rect x="170" y="260" width="110" height="70" rx="10" fill="#7A4A2E"/><rect x="170" y="260" width="110" height="22" rx="10" fill="#F3E6D3"/><circle cx="300" cy="290" r="9" fill="#5C7A3A"/><circle cx="314" cy="276" r="7" fill="#5C7A3A"/><circle cx="140" cy="280" r="8" fill="#5C7A3A"/><circle cx="230" cy="215" r="6" fill="#5C7A3A"/></svg>`;
@@ -225,7 +210,6 @@ ${sozlukBolum(6)}
 <ol>${D.sunum.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
 </div></div></section>
 
-${panikHatti('anasayfa')}
 
 <section class="bolum" style="padding-top:0"><div class="kap"><div class="davet">
 <div style="flex:1 1 380px;min-width:0"><h2>Senin de bir gün tarifin mi var?</h2><p>Herkesin tarifini sorduğu o börek, o kurabiye... Bize yaz, en muzip notlarla Gün Tabağı'nda yayınlayalım.</p></div>
@@ -302,7 +286,7 @@ ${reklam('tarif-ici-mobil-320x100')}
 <div class="kutular"><section class="kutu pembe"><h2>Gün ipucu</h2><p>${esc(t.ipucu)}</p></section>
 <section class="kutu cerceve"><h2>Sorarlarsa ne diyeceksin?</h2><p><strong>${esc(t.sorarlarsa[0])}</strong> diye sorulursa: ${esc(t.sorarlarsa[1])}</p></section></div>
 ${kazaHtml(t.slug)}
-</article>${yanKutu(t)}</div></div>${panikHatti('tarif-' + t.slug)}`
+</article>${yanKutu(t)}</div></div>`
   });
 }
 function mmSayfa(t) {
@@ -324,14 +308,14 @@ ${karneHtml(karne)}
 <section class="mm-kutu"><h2>Ölçüler ve adımlar</h2><p>Bu klasiğin ölçülü, adım adım tarifi kardeş sitemiz Mesai Mutfak'ta. Bizden gün notları, onlardan gram hesabı.</p><a class="btn dolu" style="align-self:flex-start" href="${t.mmUrl}">Tarifin tamamı Mesai Mutfak'ta</a></section></div>
 ${kazaHtml(t.slug)}
 ${reklam('tarif-ici-mobil-320x100')}
-</article>${yanKutu(t)}</div></div>${panikHatti('tarif-' + t.slug)}`
+</article>${yanKutu(t)}</div></div>`
   });
 }
 
 // ---------- Diğer sayfalar ----------
 const trendSayfa = sayfa({
   baslik: 'Trend Köşesi | İnternetin tarifleri, gün versiyonuyla | Gün Tabağı', aciklama: 'Her hafta sosyal medyada konuşulan tarifi gün sofrasına uyarlıyoruz.', yol: '/trend-kosesi/', aktif: '/trend-kosesi/',
-  govde: `${trendBolum}${panikHatti('trend')}`
+  govde: `${trendBolum}`
 });
 const sozlukSayfa = sayfa({
   baslik: 'Gün Sözlüğü | Gün dilinden Türkçeye | Gün Tabağı', aciklama: '"Zahmet etmeseydin" ne demek? Gün sofrasında söylenenlerin gerçek anlamları.', yol: '/gun-sozlugu/', aktif: '/gun-sozlugu/',
@@ -357,19 +341,15 @@ const kvkk = metinSayfa('/kvkk/', 'KVKK Aydınlatma Metni', 'Gün Tabağı kişi
 <p><strong>Veri sorumlusu:</strong> Advance Dijital Medya Reklam Hizmetleri A.Ş. · İstiklal Mah. Şehit Ali Çelik Sk. Asran Apt. No: 33 İç Kapı No: 3, Ümraniye / İstanbul · MERSİS: 0008193677700001 · İletişim: <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a></p>
 <h2>Hangi verileri işliyoruz?</h2>
 <ul>
-<li><strong>Gün Öncesi Panik Hattı:</strong> Bültene kaydolursanız adınız soyadınız, e-posta adresiniz, onay verdiğiniz tarih ve saat ile kaydı yaptığınız sayfa bilgisi.</li>
 <li><strong>Okur Tabakları:</strong> Fotoğraf gönderirseniz rumuzunuz, tabak açıklamanız, notunuz, gönderdiğiniz fotoğraf ve onay verdiğiniz tarih ve saat.</li>
 <li><strong>İletişim:</strong> Bize e-posta ile yazarsanız e-posta adresiniz ve mesajınızın içeriği.</li>
 <li><strong>Trafik kayıtları:</strong> Siteyi ziyaret ettiğinizde, barındırma altyapısı tarafından tutulan IP adresi, tarayıcı bilgisi ve erişim zamanı.</li>
 </ul>
 <h2>Hangi amaçlarla ve hangi hukuki sebeple?</h2>
-<p>Bülten için e-posta adresiniz, size haftalık tarif ve menü içeriklerini, iş birliği yaptığımız markaların reklam ve kampanyalarıyla birlikte e-postayla gönderebilmek amacıyla, 6563 sayılı Kanun kapsamında verdiğiniz ticari elektronik ileti onayına dayanarak ve KVKK m.5/2-c (hizmetin sunulması için zorunlu olması) ile m.5/2-ç (onay kayıtlarının saklanmasına ilişkin hukuki yükümlülük) uyarınca işlenir. Onay kayıtları, onayın geri alınmasından itibaren mevzuatın öngördüğü süre boyunca saklanır.</p>
 <p>Okur Tabakları'na gönderdiğiniz fotoğraf ve rumuz, sitede ve sosyal medya hesaplarımızda yayınlanması amacıyla KVKK m.5/1 uyarınca açık rızanıza dayanarak işlenir; rızanızı geri aldığınızda yayından kaldırılır ve silinir. Yayınlanmayan gönderiler en geç 6 ay içinde silinir.</p>
 <p>E-posta yazışmaları KVKK m.5/2-f uyarınca talebinize yanıt verebilmek için; trafik kayıtları ise KVKK m.5/2-ç uyarınca 5651 sayılı Kanun'dan doğan yükümlülükler ve sitenin güvenliği için işlenir.</p>
 <h2>Kimlere aktarılır?</h2>
-<p>Veriler; barındırma ve form hizmeti aldığımız Netlify, Inc. ile, bülten gönderimi için kullanacağımız e-posta gönderim hizmeti sağlayıcısıyla ve talep edilmesi hâlinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir. Bu hizmet sağlayıcıların sunucuları yurt dışında (Netlify, Inc. için ABD ve küresel içerik dağıtım ağı) bulunduğundan, aktarım KVKK m.9 uyarınca Kişisel Verileri Koruma Kurulu'nun ilan ettiği standart sözleşme ile gerçekleştirilir ve Kurum'a bildirilir. Bültende reklamı yer alan markalarla e-posta adresiniz dahil hiçbir kişisel veriniz paylaşılmaz; verileriniz üçüncü kişilere satılmaz. Onayınız ve onay zamanınız İleti Yönetim Sistemi'ne (İYS) kaydedilir.</p>
-<h2>Bültenden nasıl çıkarım?</h2>
-<p>Her bülten e-postasının altındaki "abonelikten çık" bağlantısını kullanabilir ya da <a href="mailto:sales@advancedigital.media?subject=B%C3%BClten%20iptal">sales@advancedigital.media</a> adresine yazabilirsiniz. Onayınızı geri aldığınızda size bülten gönderilmez.</p>
+<p>Veriler; barındırma ve form hizmeti aldığımız Netlify, Inc. ile ve talep edilmesi hâlinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir. Netlify'ın sunucuları yurt dışında (Netlify, Inc. için ABD ve küresel içerik dağıtım ağı) bulunduğundan, aktarım KVKK m.9 uyarınca Kişisel Verileri Koruma Kurulu'nun ilan ettiği standart sözleşme ile gerçekleştirilir ve Kurum'a bildirilir. Kişisel verileriniz reklamverenlerle paylaşılmaz ve üçüncü kişilere satılmaz.</p>
 <h2>Haklarınız</h2>
 <p>KVKK m.11 kapsamında verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini veya silinmesini isteme ve diğer haklarınıza ilişkin taleplerinizi <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a> adresine iletebilirsiniz. Talepleriniz en geç 30 gün içinde yanıtlanır.</p>`);
 
@@ -395,7 +375,7 @@ const beyazYakaSayfa = sayfa({
 <p class="by-not">Menü oluşturucuda "Ofis ekibi" seçersen sana hazır bir beyaz yaka menüsü çıkarırız.</p>
 <a class="btn dolu" href="/#menu">Beyaz yaka menümü oluştur</a></div></div>
 <div class="izgara">${D.beyazYakaSecki.map((s) => kart(bul(s))).join('')}</div>
-</div></section>${panikHatti('beyaz-yaka')}`
+</div></section>`
 });
 
 
@@ -430,11 +410,7 @@ const gonderildi = sayfa({
   govde: `<div class="kap"><div class="metin" style="text-align:center;margin:0 auto"><div class="el" style="font-size:34px">Tabak teslim alındı!</div><h1>Elinize sağlık.</h1><p>Fotoğrafına bakıp kısa süre içinde Okur Tabakları'nda yayınlayacağız. O zamana kadar çayını tazele.</p><p><a class="btn dolu" href="/okur-tabaklari/">Okur Tabakları'na dön</a></p></div></div>`
 });
 
-const tesekkur = sayfa({
-  baslik: 'Panik Hattına hoş geldin | Gün Tabağı', aciklama: 'Gün Öncesi Panik Hattı kaydın alındı.', yol: '/tesekkurler/',
-  ekHead: '<meta name="robots" content="noindex">',
-  govde: `<div class="kap"><div class="metin" style="text-align:center;margin:0 auto"><div class="el" style="font-size:34px">Kayıt tamam!</div><h1>Panik hattına hoş geldin.</h1><p>İlk e-postan perşembe sabahı geliyor. O zamana kadar çayı demle, servis tabaklarını tozdan arındır.</p><p>Gelmezse spam klasörüne bak; orada da yoksa bize yaz, belki dedikoduya dalmışızdır.</p><p><a class="btn dolu" href="/#menu">Şimdiden menünü oluştur</a></p></div></div>`
-});
+
 
 const bulunamadi = sayfa({
   baslik: 'Sayfa bulunamadı | Gün Tabağı', aciklama: 'Aradığın sayfa bulunamadı.', yol: '/404',
@@ -453,7 +429,6 @@ yaz('kvkk/index.html', kvkk);
 yaz('cerez-politikasi/index.html', cerez);
 yaz('reklam/index.html', reklamSayfa);
 yaz('404.html', bulunamadi);
-yaz('tesekkurler/index.html', tesekkur);
 yaz('beyaz-yaka-gunu/index.html', beyazYakaSayfa);
 yaz('okur-tabaklari/index.html', okurSayfa);
 yaz('tabak-gonderildi/index.html', gonderildi);
