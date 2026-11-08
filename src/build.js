@@ -118,10 +118,12 @@ const panikHatti = (kaynak) => `<section class="bolum panik" id="panik-hatti"><d
 <form class="panik-form" name="panik-hatti" method="POST" action="/tesekkurler/" data-netlify="true" netlify-honeypot="adres-alani">
 <input type="hidden" name="form-name" value="panik-hatti"><input type="hidden" name="kaynak" value="${kaynak}">
 <p class="gizli"><label>Bu alanı boş bırak <input name="adres-alani" tabindex="-1" autocomplete="off"></label></p>
-<div class="panik-satir"><label class="gizli" for="eposta-${kaynak}">E-posta adresin</label>
+<div class="panik-satir"><label class="gizli" for="adsoyad-${kaynak}">Adın soyadın</label>
+<input id="adsoyad-${kaynak}" type="text" name="ad-soyad" required autocomplete="name" maxlength="80" placeholder="Adın soyadın">
+<label class="gizli" for="eposta-${kaynak}">E-posta adresin</label>
 <input id="eposta-${kaynak}" type="email" name="eposta" required autocomplete="email" placeholder="E-posta adresin">
 <button type="submit" class="btn dolu">Beni de ekle</button></div>
-<input type="hidden" name="onay-metni" value="panik-hatti-v2-2026-11-08">
+<input type="hidden" name="onay-metni" value="panik-hatti-v3-2026-11-08">
 <label class="onay"><input type="checkbox" name="eposta-onayi" value="evet" required>
 <span>Gün Tabağı'nın her hafta gönderdiği tarif bültenini almak istiyorum. Bültende iş birliği yapılan markaların <strong>reklam ve kampanyalarına</strong> da yer verileceğini biliyorum ve bu içerikleri taşıyan ticari elektronik iletileri almaya onay veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum. Onayımı her e-postadaki "abonelikten çık" bağlantısıyla geri alabilirim.</span></label>
 </form></div></div></section>`;
@@ -355,7 +357,7 @@ const kvkk = metinSayfa('/kvkk/', 'KVKK Aydınlatma Metni', 'Gün Tabağı kişi
 <p><strong>Veri sorumlusu:</strong> Advance Dijital Medya Reklam Hizmetleri A.Ş. · İstiklal Mah. Şehit Ali Çelik Sk. Asran Apt. No: 33 İç Kapı No: 3, Ümraniye / İstanbul · MERSİS: 0008193677700001 · İletişim: <a href="mailto:sales@advancedigital.media">sales@advancedigital.media</a></p>
 <h2>Hangi verileri işliyoruz?</h2>
 <ul>
-<li><strong>Gün Öncesi Panik Hattı:</strong> Bültene kaydolursanız e-posta adresiniz, onay verdiğiniz tarih ve saat ile kaydı yaptığınız sayfa bilgisi.</li>
+<li><strong>Gün Öncesi Panik Hattı:</strong> Bültene kaydolursanız adınız soyadınız, e-posta adresiniz, onay verdiğiniz tarih ve saat ile kaydı yaptığınız sayfa bilgisi.</li>
 <li><strong>Okur Tabakları:</strong> Fotoğraf gönderirseniz rumuzunuz, tabak açıklamanız, notunuz, gönderdiğiniz fotoğraf ve onay verdiğiniz tarih ve saat.</li>
 <li><strong>İletişim:</strong> Bize e-posta ile yazarsanız e-posta adresiniz ve mesajınızın içeriği.</li>
 <li><strong>Trafik kayıtları:</strong> Siteyi ziyaret ettiğinizde, barındırma altyapısı tarafından tutulan IP adresi, tarayıcı bilgisi ve erişim zamanı.</li>

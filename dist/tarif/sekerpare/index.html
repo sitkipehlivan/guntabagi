@@ -18,7 +18,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v=b21937fa">
+<link rel="stylesheet" href="/assets/style.css?v=8c8bcbb8">
 
 </head>
 <body>
@@ -52,10 +52,12 @@
 <form class="panik-form" name="panik-hatti" method="POST" action="/tesekkurler/" data-netlify="true" netlify-honeypot="adres-alani">
 <input type="hidden" name="form-name" value="panik-hatti"><input type="hidden" name="kaynak" value="tarif-sekerpare">
 <p class="gizli"><label>Bu alanı boş bırak <input name="adres-alani" tabindex="-1" autocomplete="off"></label></p>
-<div class="panik-satir"><label class="gizli" for="eposta-tarif-sekerpare">E-posta adresin</label>
+<div class="panik-satir"><label class="gizli" for="adsoyad-tarif-sekerpare">Adın soyadın</label>
+<input id="adsoyad-tarif-sekerpare" type="text" name="ad-soyad" required autocomplete="name" maxlength="80" placeholder="Adın soyadın">
+<label class="gizli" for="eposta-tarif-sekerpare">E-posta adresin</label>
 <input id="eposta-tarif-sekerpare" type="email" name="eposta" required autocomplete="email" placeholder="E-posta adresin">
 <button type="submit" class="btn dolu">Beni de ekle</button></div>
-<input type="hidden" name="onay-metni" value="panik-hatti-v2-2026-11-08">
+<input type="hidden" name="onay-metni" value="panik-hatti-v3-2026-11-08">
 <label class="onay"><input type="checkbox" name="eposta-onayi" value="evet" required>
 <span>Gün Tabağı'nın her hafta gönderdiği tarif bültenini almak istiyorum. Bültende iş birliği yapılan markaların <strong>reklam ve kampanyalarına</strong> da yer verileceğini biliyorum ve bu içerikleri taşıyan ticari elektronik iletileri almaya onay veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum. Onayımı her e-postadaki "abonelikten çık" bağlantısıyla geri alabilirim.</span></label>
 </form></div></div></section>
