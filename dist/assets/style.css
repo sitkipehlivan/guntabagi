@@ -218,3 +218,39 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0;line-height:1.08}
 .by-yazi .btn{align-self:flex-start}
 .by-not{font-size:15px!important;color:var(--metin3)!important}
 @media (max-width:600px){.by-kutu{padding:24px}}
+
+/* Üst arama */
+.ust-ara{display:flex;align-items:center;background:var(--beyaz);border:1.5px solid var(--cizgi);border-radius:999px;padding:0 4px 0 14px;height:42px;order:3}
+.ust-ara input{border:0;background:transparent;font:15px var(--sans);width:150px;outline:none;color:var(--cay)}
+.ust-ara button{width:36px;height:36px;border-radius:18px;border:0;background:var(--visne);color:var(--krem);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.ust .menu{order:2}
+@media (max-width:1100px){.ust .menu{order:4;width:100%}}
+@media (max-width:760px){.ust-ara{flex:1 1 160px}.ust-ara input{width:100%}}
+
+/* Bütün tarifler 2 sıra */
+.iki-sira{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1100px){.iki-sira{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.iki-sira{grid-template-columns:1fr}}
+.ana-ara{margin-left:0;flex:1 1 280px;max-width:420px}
+
+/* Gün kazası raporu */
+.kaza{border:1.5px dashed var(--visne);border-radius:20px;padding:22px 24px;background:#FFFDF9;display:flex;flex-direction:column;gap:8px}
+.kaza-etiket{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--visne)}
+.kaza p{margin:0;font-family:var(--el);font-size:25px;line-height:1.25;color:var(--cay)}
+.kaza small{color:var(--metin3);font-size:13px}
+
+/* Okur tabakları */
+.okur-bos{background:var(--beyaz);border:1.5px dashed var(--cizgi);border-radius:24px;padding:40px;text-align:center}
+.okur-bos p{color:var(--metin2);max-width:520px;margin:10px auto 0}
+.okur-form-kutu{background:var(--beyaz);border:1.5px solid var(--cay);border-radius:28px;padding:38px;box-shadow:6px 6px 0 var(--cay);display:flex;flex-wrap:wrap;gap:36px}
+.okur-form-yazi{flex:1 1 300px;min-width:0}
+.okur-form-yazi h2{font-size:34px;margin-bottom:10px}
+.okur-form-yazi p{color:var(--metin2);margin:0 0 12px}
+.okur-ipucu{margin:0;padding-left:18px;color:var(--metin2);font-size:15px}
+.okur-form{flex:2 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.alan{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:15px}
+.alan small{font-weight:400;color:var(--metin3)}
+.alan input[type=text],.alan textarea{border:1.5px solid var(--cizgi);border-radius:14px;padding:12px 14px;font:16px var(--sans);background:var(--krem);color:var(--cay)}
+.alan input[type=file]{font:15px var(--sans)}
+.okur-kart{margin:0}
+@media (max-width:600px){.okur-form-kutu{padding:24px}}

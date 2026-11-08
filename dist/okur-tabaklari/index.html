@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Okur Tabakları | Senin gün tabağın | Gün Tabağı</title>
+<meta name="description" content="Okurlarımızın gün tabakları. Sen de günden kalma tabağının fotoğrafını gönder, Gün Tabağı'nda yayınlansın.">
+<link rel="canonical" href="https://guntabagi.com.tr/okur-tabaklari/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gün Tabağı">
+<meta property="og:title" content="Okur Tabakları | Senin gün tabağın | Gün Tabağı">
+<meta property="og:description" content="Okurlarımızın gün tabakları. Sen de günden kalma tabağının fotoğrafını gönder, Gün Tabağı'nda yayınlansın.">
+<meta property="og:url" content="https://guntabagi.com.tr/okur-tabaklari/">
+<meta property="og:image" content="https://guntabagi.com.tr/og.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#8E1F3D">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=DM+Sans:opsz,wght@9..40,400..700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=39b04c2f">
+
+</head>
+<body>
+<a class="gizli" href="#icerik">İçeriğe geç</a>
+<div class="bant">Uyarı: Bu sitedeki kalori bilgileri yalnızca misafirler için geçerlidir. Ev sahibi gün boyu ayakta olduğundan yaktığı kabul edilir.</div>
+<header class="ust"><div class="kap">
+<a class="logo" href="/" aria-label="Gün Tabağı ana sayfa"><svg width="44" height="44" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#FFFFFF" stroke="#8E1F3D" stroke-width="2.5"/><circle cx="24" cy="24" r="16" fill="none" stroke="#C9952E" stroke-width="1.5" stroke-dasharray="2 3"/><circle cx="24" cy="24" r="9" fill="#F6D5D5"/></svg><span>gün tabağı</span></a>
+<form class="ust-ara" role="search" action="/tarifler/" method="get"><label class="gizli" for="ust-ara-girdi">Tarif ara</label><input id="ust-ara-girdi" type="search" name="q" placeholder="Tarif ara"><button type="submit" aria-label="Ara"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button></form>
+<nav class="menu" aria-label="Ana menü"><a href="/tarifler/">Tarifler</a><a href="/beyaz-yaka-gunu/">Beyaz Yaka Günü</a><a href="/#menu">Gün Menüsü Oluştur</a><a href="/trend-kosesi/">Trend Köşesi</a><a href="/okur-tabaklari/" aria-current="page">Okur Tabakları</a><a href="/gun-sozlugu/">Gün Sözlüğü</a></nav>
+</div></header>
+<main id="icerik">
+<section class="bolum"><div class="kap">
+<div class="bolum-bas"><div><div class="el">Kayınvalide değil, okur onaylı</div><h1 style="font-size:clamp(38px,5vw,56px);letter-spacing:-1px;margin-top:4px">Okur Tabakları</h1></div></div>
+<div class="okur-bos"><div class="el" style="font-size:30px">Masa kuruldu, misafir bekleniyor.</div><p>Okur Tabakları yeni açıldı. İlk tabak senin olsun; fotoğrafını gönder, burada ilk sırada sen dur.</p></div>
+</div></section>
+<section class="bolum" id="gonder" style="padding-top:0"><div class="kap"><div class="okur-form-kutu">
+<div class="okur-form-yazi"><h2>Tabağını gönder</h2>
+<p>Gün sofranın fotoğrafını çek, gönder. Ekibimiz bakıp en güzellerini bu sayfada yayınlar. Yayınlamadan önce her fotoğrafı tek tek kontrol ediyoruz.</p>
+<ul class="okur-ipucu"><li>Tabak yukarıdan, gün ışığında çekilsin.</li><li>Fotoğrafta yüz olmasın; eller ve bilezikler serbest.</li><li>En fazla 8 MB, JPG ya da PNG.</li></ul></div>
+<form class="okur-form" name="okur-tabagi" method="POST" action="/tabak-gonderildi/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="adres-alani">
+<input type="hidden" name="form-name" value="okur-tabagi">
+<p class="gizli"><label>Bu alanı boş bırak <input name="adres-alani" tabindex="-1" autocomplete="off"></label></p>
+<label class="alan"><span>Rumuzun <small>(sayfada bu görünür)</small></span><input type="text" name="rumuz" required maxlength="40" placeholder="Örn. Ayşe H. ya da Börekçi Teyze"></label>
+<label class="alan"><span>Tabakta ne var?</span><input type="text" name="tarif" required maxlength="80" placeholder="Örn. Patatesli milföy, kısır, revani"></label>
+<label class="alan"><span>Kısa bir not <small>(isteğe bağlı)</small></span><textarea name="not" rows="3" maxlength="280" placeholder="Kayınvalide ne dedi? Tabakta bir şey kaldı mı?"></textarea></label>
+<label class="alan"><span>Fotoğraf</span><input type="file" name="fotograf" accept="image/jpeg,image/png,image/webp" required></label>
+<label class="onay"><input type="checkbox" name="yayin-onayi" value="evet" required><span>Gönderdiğim fotoğrafı kendim çektim. Fotoğrafın ve rumuzumun Gün Tabağı'nda ve sosyal medya hesaplarında yayınlanmasına açık rıza veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum; rızamı istediğim zaman <a href="mailto:merhaba@guntabagi.com.tr">merhaba@guntabagi.com.tr</a> adresine yazarak geri alabilirim.</span></label>
+<button type="submit" class="btn dolu" style="align-self:flex-start">Tabağımı gönder</button>
+</form></div></div></section>
+</main>
+<footer class="alt-bilgi"><div class="kap">
+<div><div class="logo-y">gün tabağı</div>
+<p>Gün Tabağı bir Advance Digital yayınıdır. Kalorileri saymıyoruz; zaten misafirler yiyor.</p>
+<p>Kardeş site: <a href="https://mesaimutfak.com/?utm_source=guntabagi&amp;utm_medium=referral&amp;utm_campaign=footer">Mesai Mutfak</a></p>
+<p style="font-size:13px;opacity:.8">© 2026 Gün Tabağı. Tarifler ve metinler izinsiz kopyalanamaz; kopyalayanın börekleri açılır.</p></div>
+<nav aria-label="Alt menü"><a href="/kunye/">Künye</a><a href="/kvkk/">KVKK Aydınlatma Metni</a><a href="/cerez-politikasi/">Çerez Politikası</a><a href="/reklam/">Reklam</a><a href="mailto:merhaba@guntabagi.com.tr">İletişim</a></nav>
+</div></footer>
+<script src="/assets/app.js?v=f11d0de6" defer></script>
+</body>
+</html>

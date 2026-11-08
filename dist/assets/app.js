@@ -42,6 +42,30 @@
     ciz();
   }
 
+
+  // ---- Ana sayfa: Bütün Tarifler (2 sıra + canlı arama) ----
+  function norm2(s) { return (s || '').toLocaleLowerCase('tr').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i'); }
+  var al = document.getElementById('ana-liste');
+  if (al) {
+    var ak = Array.prototype.slice.call(al.querySelectorAll('.kart'));
+    var ag = document.getElementById('ana-ara');
+    var ab = document.getElementById('ana-bos');
+    function anaUygula() {
+      var q = norm2(ag.value.trim());
+      var limit = window.matchMedia('(max-width: 600px)').matches ? 4 : 8;
+      var n = 0;
+      ak.forEach(function (k) {
+        var uyar = !q || norm2(k.dataset.ara).indexOf(q) > -1;
+        var goster = uyar && (q ? true : n < limit);
+        if (uyar) n++;
+        k.style.display = goster ? '' : 'none';
+      });
+      ab.style.display = q && !ak.some(function (k) { return k.style.display !== 'none'; }) ? 'block' : 'none';
+    }
+    ag.addEventListener('input', anaUygula);
+    anaUygula();
+  }
+
   // ---- Tarif listesi filtre + arama ----
   var fl = document.getElementById('tarif-listesi');
   if (fl) {
@@ -52,6 +76,7 @@
     var kat = 'hepsi';
     var params = new URLSearchParams(location.search);
     if (params.get('k')) kat = params.get('k');
+    if (params.get('q')) girdi.value = params.get('q');
     function norm(s) { return s.toLocaleLowerCase('tr').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i'); }
     function uygula() {
       var q = norm(girdi.value || '');

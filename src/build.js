@@ -52,7 +52,7 @@ ${[[360, 260], [440, 280], [400, 340], [470, 230]].map(([x, y]) => `<path d="M${
 
 // ---------- Ortak şablon ----------
 const nav = [
-  ['/tarifler/', 'Tarifler'], ['/beyaz-yaka-gunu/', 'Beyaz Yaka Günü'], ['/#menu', 'Gün Menüsü Oluştur'], ['/trend-kosesi/', 'Trend Köşesi'], ['/gun-sozlugu/', 'Gün Sözlüğü'], ['/#sunum', 'Sunum Sanatı']
+  ['/tarifler/', 'Tarifler'], ['/beyaz-yaka-gunu/', 'Beyaz Yaka Günü'], ['/#menu', 'Gün Menüsü Oluştur'], ['/trend-kosesi/', 'Trend Köşesi'], ['/okur-tabaklari/', 'Okur Tabakları'], ['/gun-sozlugu/', 'Gün Sözlüğü']
 ];
 function sayfa({ baslik, aciklama, yol, govde, aktif = '', ekHead = '', gorsel = '/og.png', tip = 'website' }) {
   const canon = SITE + yol;
@@ -85,6 +85,7 @@ ${ekHead}
 <div class="bant">Uyarı: Bu sitedeki kalori bilgileri yalnızca misafirler için geçerlidir. Ev sahibi gün boyu ayakta olduğundan yaktığı kabul edilir.</div>
 <header class="ust"><div class="kap">
 <a class="logo" href="/" aria-label="Gün Tabağı ana sayfa">${logoSvg()}<span>gün tabağı</span></a>
+<form class="ust-ara" role="search" action="/tarifler/" method="get"><label class="gizli" for="ust-ara-girdi">Tarif ara</label><input id="ust-ara-girdi" type="search" name="q" placeholder="Tarif ara"><button type="submit" aria-label="Ara"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button></form>
 <nav class="menu" aria-label="Ana menü">${nav.map(([h, a]) => `<a href="${h}"${aktif === h ? ' aria-current="page"' : ''}>${a}</a>`).join('')}</nav>
 </div></header>
 <main id="icerik">
@@ -102,7 +103,7 @@ ${govde}
 </html>`;
 }
 
-const kart = (t) => `<a class="kart" href="/tarif/${t.slug}/" data-kategori="${t.kategori}" data-ara="${esc(t.ad + ' ' + kat[t.kategori] + ' ' + t.rozet)}">
+const kart = (t) => `<a class="kart" href="/tarif/${t.slug}/" data-kategori="${t.kategori}" data-ara="${esc(t.ad + ' ' + kat[t.kategori] + ' ' + t.rozet + ' ' + t.spot)}">
 <div class="foto"><img src="${t.img}" alt="${esc(t.ad)}" loading="lazy" width="700" height="525"></div>
 <div class="ic"><span class="rozet">${esc(t.rozet)}</span><h3>${esc(t.ad)}</h3><p>${esc(t.spot)}</p>
 <div class="alt"><span>${sureYaz(t.sure)} · ${esc(kat[t.kategori])}</span><span>Kayınvalide onayı <strong>${t.onay}/5</strong></span></div></div></a>`;
@@ -178,6 +179,15 @@ const anasayfa = sayfa({
 <script type="application/json" id="menu-veri">${JSON.stringify(menuVeri)}</script>
 </div></section>
 
+
+<section class="bolum" id="tum-tarifler"><div class="kap">
+<div class="bolum-bas"><div><div class="el">${D.tumTarifler.length} tarif, tek arama</div><h2>Bütün Tarifler</h2></div>
+<div class="ara ana-ara"><label class="gizli" for="ana-ara">Tarif ara</label><input id="ana-ara" type="search" placeholder="Ne pişirsem? börek, kurabiye, vegan..."></div></div>
+<div class="izgara iki-sira" id="ana-liste">${D.tumTarifler.map(kart).join('')}</div>
+<p class="bos" id="ana-bos">Bu aramaya uyan tarif yok. Belki de yeni bir gün klasiği icat etme zamanı.</p>
+<p style="text-align:center;margin-top:26px"><a class="btn dolu" href="/tarifler/">Bütün ${D.tumTarifler.length} tarifi gör</a></p>
+</div></section>
+
 ${reklam('anasayfa-orta-mobil')}
 
 <section class="bolum" id="tarifler"><div class="kap">
@@ -197,6 +207,12 @@ ${reklam('anasayfa-orta-mobil')}
 <div class="bolum-bas"><div><div class="el">Ne arıyordun?</div><h2>Kategoriler</h2></div></div>
 <div class="filtre">${D.kategoriler.map((k) => `<a class="btn" href="/tarifler/?k=${k.id}">${k.ad}</a>`).join('')}</div>
 </div></section>
+
+
+<section class="bolum" id="okur"><div class="kap"><div class="davet okur-davet">
+<div style="flex:1 1 380px;min-width:0"><div class="el">Senin tabağın burada olsun</div><h2>Okur Tabakları</h2><p>Günden kalma o güzel tabağın fotoğrafını gönder; en şık, en bereketli, en "kim yaptı bunu" dedirten tabaklar Gün Tabağı'nda yayınlansın.</p></div>
+<a class="btn dolu" href="/okur-tabaklari/#gonder">Tabağımı gönder</a>
+</div></div></section>
 
 ${trendBolum}
 ${sozlukBolum(6)}
@@ -239,6 +255,21 @@ ${reklam('tarif-yan-300x250')}
 <div class="yan-kutu"><b>Yanına çok yakışır</b>${[...benzer, ...ekle].map((x) => `<a class="mini" href="/tarif/${x.slug}/"><img src="${x.img}" alt="" loading="lazy" width="60" height="60"><span><strong>${esc(x.ad)}</strong>${esc(x.rozet)}</span></a>`).join('')}</div>
 </aside>`;
 }
+
+// ---------- Gün Kazası Raporu (editoryal espri) ----------
+const kazalar = [
+  'Revaninin şerbeti sigara böreğine aktıysa: adı artık "tatlı-tuzlu füzyon". Fiyatı iki katı.',
+  'Şerbet kısıra sızdıysa panik yok; nar ekşisi zaten tatlı-ekşiydi. Fark eden de ikinci tabağı alır.',
+  'Börek tepsisi şerbetli tatlının yanında durunca "şerbetli börek" doğar. Kayınvalide "bizim memlekette böyle yapılır" der, kurtulursun.',
+  'Poğaça şekerpareyle aynı tabağa düştüyse bu bir kaza değil, bir aşk hikâyesi. Ayırma, yakışıyorlar.',
+  'Şerbet zeytinyağlı sarmaya karıştıysa limonu bol sık ve gururla "Ege usulü" de.',
+  'Tuzlu kurabiye şerbete mi düştü? Hemen ye. Delil kalmazsa kaza da yaşanmamıştır.',
+  'Mercimek köftesi revani şerbetine bulandıysa üstüne bir marul yaprağı ört ve onu sessizce sahneden indir.',
+  'Şerbetli tatlıyı en son ve ayrı tabakta çıkar. Bunu söylüyoruz çünkü biz de yaşadık, hem de iki kez.'
+];
+const kazaHtml = (slug) => { let h = 0; for (const c of slug) h = (h * 31 + c.charCodeAt(0)) % 9973; const k = kazalar[h % kazalar.length];
+  return `<section class="kaza"><div class="kaza-etiket">GÜN KAZASI RAPORU</div><p>${esc(k)}</p><small>Gün Tabağı mutfağından, yaşanmış ya da yaşanacak bir kaza.</small></section>`; };
+
 function karneHtml(karne) {
   return `<section class="karne"><div class="ust-satir"><h2>Gün Karnesi</h2><span class="el">bağımsız olmayan jürimizden</span></div>
 <div class="karne-izgara">${karne.map(([ad, p, y]) => `<div class="karne-satir"><div class="ad"><span>${esc(ad)}</span><strong>${p}/5</strong></div><div class="cubuk" role="img" aria-label="${p} / 5"><span style="width:${p * 20}%"></span></div><small>${esc(y)}</small></div>`).join('')}</div></section>`;
@@ -267,6 +298,7 @@ ${reklam('tarif-ici-mobil-320x100')}
 <section class="tarif-bolum"><h2>Yapılışı</h2><ol class="adimlar">${t.adimlar.map(([m, l]) => `<li><div><p>${esc(m)}</p><div class="el">${esc(l)}</div></div></li>`).join('')}</ol></section>
 <div class="kutular"><section class="kutu pembe"><h2>Gün ipucu</h2><p>${esc(t.ipucu)}</p></section>
 <section class="kutu cerceve"><h2>Sorarlarsa ne diyeceksin?</h2><p><strong>${esc(t.sorarlarsa[0])}</strong> diye sorulursa: ${esc(t.sorarlarsa[1])}</p></section></div>
+${kazaHtml(t.slug)}
 </article>${yanKutu(t)}</div></div>${panikHatti('tarif-' + t.slug)}`
   });
 }
@@ -287,6 +319,7 @@ function mmSayfa(t) {
 ${karneHtml(karne)}
 <div class="kutular"><section class="kutu pembe"><h2>Gün ipucu</h2><p>${esc(t.ipucu)}</p></section>
 <section class="mm-kutu"><h2>Ölçüler ve adımlar</h2><p>Bu klasiğin ölçülü, adım adım tarifi kardeş sitemiz Mesai Mutfak'ta. Bizden gün notları, onlardan gram hesabı.</p><a class="btn dolu" style="align-self:flex-start" href="${t.mmUrl}">Tarifin tamamı Mesai Mutfak'ta</a></section></div>
+${kazaHtml(t.slug)}
 ${reklam('tarif-ici-mobil-320x100')}
 </article>${yanKutu(t)}</div></div>${panikHatti('tarif-' + t.slug)}`
   });
@@ -318,11 +351,13 @@ const kvkk = metinSayfa('/kvkk/', 'KVKK Aydınlatma Metni', 'Gün Tabağı kişi
 <h2>Hangi verileri işliyoruz?</h2>
 <ul>
 <li><strong>Gün Öncesi Panik Hattı:</strong> Bültene kaydolursanız e-posta adresiniz, onay verdiğiniz tarih ve saat ile kaydı yaptığınız sayfa bilgisi.</li>
+<li><strong>Okur Tabakları:</strong> Fotoğraf gönderirseniz rumuzunuz, tabak açıklamanız, notunuz, gönderdiğiniz fotoğraf ve onay verdiğiniz tarih ve saat.</li>
 <li><strong>İletişim:</strong> Bize e-posta ile yazarsanız e-posta adresiniz ve mesajınızın içeriği.</li>
 <li><strong>Trafik kayıtları:</strong> Siteyi ziyaret ettiğinizde, barındırma altyapısı tarafından tutulan IP adresi, tarayıcı bilgisi ve erişim zamanı.</li>
 </ul>
 <h2>Hangi amaçlarla ve hangi hukuki sebeple?</h2>
 <p>Bülten için e-posta adresiniz, size haftalık tarif, menü ve kampanya içerikli e-postalar gönderebilmek amacıyla, 6563 sayılı Kanun kapsamında verdiğiniz onaya dayanarak ve KVKK m.5/2-c (hizmetin sunulması için zorunlu olması) ile m.5/2-ç (onay kayıtlarının saklanmasına ilişkin hukuki yükümlülük) uyarınca işlenir. Onay kayıtları, onayın geri alınmasından itibaren mevzuatın öngördüğü süre boyunca saklanır.</p>
+<p>Okur Tabakları'na gönderdiğiniz fotoğraf ve rumuz, sitede ve sosyal medya hesaplarımızda yayınlanması amacıyla KVKK m.5/1 uyarınca açık rızanıza dayanarak işlenir; rızanızı geri aldığınızda yayından kaldırılır ve silinir. Yayınlanmayan gönderiler en geç 6 ay içinde silinir.</p>
 <p>E-posta yazışmaları KVKK m.5/2-f uyarınca talebinize yanıt verebilmek için; trafik kayıtları ise KVKK m.5/2-ç uyarınca 5651 sayılı Kanun'dan doğan yükümlülükler ve sitenin güvenliği için işlenir.</p>
 <h2>Kimlere aktarılır?</h2>
 <p>Veriler; barındırma ve form hizmeti aldığımız Netlify, Inc. ile, bülten gönderimi için kullanacağımız e-posta gönderim hizmeti sağlayıcısıyla ve talep edilmesi hâlinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir. Bu hizmet sağlayıcıların sunucuları yurt dışında bulunduğundan, aktarım KVKK m.9 uyarınca standart sözleşme ile gerçekleştirilir. Verileriniz üçüncü kişilere satılmaz ve reklam amacıyla paylaşılmaz.</p>
@@ -356,6 +391,38 @@ const beyazYakaSayfa = sayfa({
 </div></section>${panikHatti('beyaz-yaka')}`
 });
 
+
+const OKUR = require('./okur');
+const okurSayfa = sayfa({
+  baslik: 'Okur Tabakları | Senin gün tabağın | Gün Tabağı',
+  aciklama: 'Okurlarımızın gün tabakları. Sen de günden kalma tabağının fotoğrafını gönder, Gün Tabağı\'nda yayınlansın.',
+  yol: '/okur-tabaklari/', aktif: '/okur-tabaklari/',
+  govde: `<section class="bolum"><div class="kap">
+<div class="bolum-bas"><div><div class="el">Kayınvalide değil, okur onaylı</div><h1 style="font-size:clamp(38px,5vw,56px);letter-spacing:-1px;margin-top:4px">Okur Tabakları</h1></div></div>
+${OKUR.length ? `<div class="izgara">${OKUR.map((o) => `<figure class="kart okur-kart"><div class="foto"><img src="${o.foto}" alt="${esc(o.rumuz)} adlı okurumuzun gün tabağı: ${esc(o.tarif)}" loading="lazy"></div><figcaption class="ic"><span class="rozet">${esc(o.tarif)}</span><h3>${esc(o.rumuz)}</h3>${o.not ? `<p>${esc(o.not)}</p>` : ''}</figcaption></figure>`).join('')}</div>`
+  : `<div class="okur-bos"><div class="el" style="font-size:30px">Masa kuruldu, misafir bekleniyor.</div><p>Okur Tabakları yeni açıldı. İlk tabak senin olsun; fotoğrafını gönder, burada ilk sırada sen dur.</p></div>`}
+</div></section>
+<section class="bolum" id="gonder" style="padding-top:0"><div class="kap"><div class="okur-form-kutu">
+<div class="okur-form-yazi"><h2>Tabağını gönder</h2>
+<p>Gün sofranın fotoğrafını çek, gönder. Ekibimiz bakıp en güzellerini bu sayfada yayınlar. Yayınlamadan önce her fotoğrafı tek tek kontrol ediyoruz.</p>
+<ul class="okur-ipucu"><li>Tabak yukarıdan, gün ışığında çekilsin.</li><li>Fotoğrafta yüz olmasın; eller ve bilezikler serbest.</li><li>En fazla 8 MB, JPG ya da PNG.</li></ul></div>
+<form class="okur-form" name="okur-tabagi" method="POST" action="/tabak-gonderildi/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="adres-alani">
+<input type="hidden" name="form-name" value="okur-tabagi">
+<p class="gizli"><label>Bu alanı boş bırak <input name="adres-alani" tabindex="-1" autocomplete="off"></label></p>
+<label class="alan"><span>Rumuzun <small>(sayfada bu görünür)</small></span><input type="text" name="rumuz" required maxlength="40" placeholder="Örn. Ayşe H. ya da Börekçi Teyze"></label>
+<label class="alan"><span>Tabakta ne var?</span><input type="text" name="tarif" required maxlength="80" placeholder="Örn. Patatesli milföy, kısır, revani"></label>
+<label class="alan"><span>Kısa bir not <small>(isteğe bağlı)</small></span><textarea name="not" rows="3" maxlength="280" placeholder="Kayınvalide ne dedi? Tabakta bir şey kaldı mı?"></textarea></label>
+<label class="alan"><span>Fotoğraf</span><input type="file" name="fotograf" accept="image/jpeg,image/png,image/webp" required></label>
+<label class="onay"><input type="checkbox" name="yayin-onayi" value="evet" required><span>Gönderdiğim fotoğrafı kendim çektim. Fotoğrafın ve rumuzumun Gün Tabağı'nda ve sosyal medya hesaplarında yayınlanmasına açık rıza veriyorum. <a href="/kvkk/">KVKK Aydınlatma Metni</a>'ni okudum; rızamı istediğim zaman <a href="mailto:merhaba@guntabagi.com.tr">merhaba@guntabagi.com.tr</a> adresine yazarak geri alabilirim.</span></label>
+<button type="submit" class="btn dolu" style="align-self:flex-start">Tabağımı gönder</button>
+</form></div></div></section>`
+});
+const gonderildi = sayfa({
+  baslik: 'Tabağın bize ulaştı | Gün Tabağı', aciklama: 'Okur tabağı gönderin alındı.', yol: '/tabak-gonderildi/',
+  ekHead: '<meta name="robots" content="noindex">',
+  govde: `<div class="kap"><div class="metin" style="text-align:center;margin:0 auto"><div class="el" style="font-size:34px">Tabak teslim alındı!</div><h1>Elinize sağlık.</h1><p>Fotoğrafına bakıp kısa süre içinde Okur Tabakları'nda yayınlayacağız. O zamana kadar çayını tazele.</p><p><a class="btn dolu" href="/okur-tabaklari/">Okur Tabakları'na dön</a></p></div></div>`
+});
+
 const tesekkur = sayfa({
   baslik: 'Panik Hattına hoş geldin | Gün Tabağı', aciklama: 'Gün Öncesi Panik Hattı kaydın alındı.', yol: '/tesekkurler/',
   ekHead: '<meta name="robots" content="noindex">',
@@ -381,11 +448,13 @@ yaz('reklam/index.html', reklamSayfa);
 yaz('404.html', bulunamadi);
 yaz('tesekkurler/index.html', tesekkur);
 yaz('beyaz-yaka-gunu/index.html', beyazYakaSayfa);
+yaz('okur-tabaklari/index.html', okurSayfa);
+yaz('tabak-gonderildi/index.html', gonderildi);
 D.tamTarifler.forEach((t) => { yaz(`img/tarifler/${t.slug}.svg`, cizimler[t.cizim]()); yaz(`tarif/${t.slug}/index.html`, tamSayfa(t)); });
 D.mmTarifler.forEach((t) => yaz(`tarif/${t.slug}/index.html`, mmSayfa(t)));
 yaz('favicon.svg', logoSvg(48).replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '));
 
-const urls = ['/', '/tarifler/', '/beyaz-yaka-gunu/', '/trend-kosesi/', '/gun-sozlugu/', '/kunye/', '/kvkk/', '/cerez-politikasi/', '/reklam/', ...D.tumTarifler.map((t) => `/tarif/${t.slug}/`)];
+const urls = ['/', '/tarifler/', '/beyaz-yaka-gunu/', '/okur-tabaklari/', '/trend-kosesi/', '/gun-sozlugu/', '/kunye/', '/kvkk/', '/cerez-politikasi/', '/reklam/', ...D.tumTarifler.map((t) => `/tarif/${t.slug}/`)];
 yaz('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc><lastmod>2026-11-08</lastmod></url>`).join('\n')}\n</urlset>\n`);
 yaz('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 yaz('netlify.toml', `[build]\n  publish = "."\n\n[[headers]]\n  for = "/*"\n  [headers.values]\n    X-Content-Type-Options = "nosniff"\n    Referrer-Policy = "strict-origin-when-cross-origin"\n    X-Frame-Options = "SAMEORIGIN"\n\n[[headers]]\n  for = "/assets/*"\n  [headers.values]\n    Cache-Control = "public, max-age=604800"\n\n[[headers]]\n  for = "/img/*"\n  [headers.values]\n    Cache-Control = "public, max-age=2592000"\n`);
