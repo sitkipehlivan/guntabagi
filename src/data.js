@@ -221,6 +221,7 @@ const tamTarifler = [
 ];
 
 tamTarifler.push(...require('./beyazyaka'));
+tamTarifler.push(...require('./yeni-gun'));
 
 // ---------- Mesai Mutfak'tan gelen gün klasikleri ----------
 // [slug, ad, kategori, süre(dk), spot, rozet, onay, ipucu]
@@ -258,7 +259,39 @@ const mmHam = [
   ['sekerpare', 'Şekerpare', 'tatli', 55, 'Bayram tatlısı, gün sofrasına terfi etti. Şerbetli ama ağırbaşlı.', 'Bayram havası', 4, 'Soğuk şerbeti sıcak tatlıya dök; şekerpare şerbeti içsin, sen de çayını iç.'],
   ['supangle', 'Supangle', 'tatli', 25, 'Kupada yoğun kakao keyfi. Kimse diyet konuşmaz, herkes kaşığını yalar.', 'Kaşık yalatan', 4, 'Üzerine Hindistan cevizi ya da fındık serp; kupalar fotoğrafa hazır.'],
   ['kalpli-kurabiye', 'Kalpli Kurabiye', 'kurabiye', 45, 'Ortasında reçel, kenarında sevgi. Gün sahibi olarak verdiğin en tatlı mesaj.', 'Sevgi gösterisi', 4, 'Reçeli pişirmeden önce koy; parlaklığı vitrin kalitesinde olur.'],
-  ['acibadem-kurabiyesi', 'Acıbadem Kurabiyesi', 'kurabiye', 30, 'Unsuz, çıtır, zarif. Glutensiz misafirin seni hayatı boyunca hatırlamasını sağlar.', 'Glutensiz dost', 4, 'Pişince tepside soğumaya bırak; sıcakken kaldırırsan kırılır, kalbin de.']
+  ['acibadem-kurabiyesi', 'Acıbadem Kurabiyesi', 'kurabiye', 30, 'Unsuz, çıtır, zarif. Glutensiz misafirin seni hayatı boyunca hatırlamasını sağlar.', 'Glutensiz dost', 4, 'Pişince tepside soğumaya bırak; sıcakken kaldırırsan kırılır, kalbin de.'],
+
+  // --- Kasım 2026 çeşitlendirme (Mesai Mutfak) ---
+  ['fava', 'Fava', 'meze', 55, 'Pürüzsüz, sakin, dereotlu. Kısırın gürültüsüne karşı tabağın meditasyon köşesi.', 'Sofranın zen köşesi', 5, 'Kalıba dökülüp ters çevrilmiş fava, üstüne kırmızı soğan halkası: tabak kendini anlatır.'],
+  ['muhammara', 'Muhammara', 'meze', 30, 'Ceviz, kapya, nar ekşisi. Tadına bakan herkes "bu ne, bunu nereden buldun" sorusunu sorar.', 'Soru işareti mezesi', 4, 'Yanına lavaş cipsi koy; kaşıkla yiyenler de olacak, yargılama.'],
+  ['atom', 'Atom', 'meze', 8, 'Adı kadar etkili: süzme yoğurt, kuru acı biber, kızgın tereyağı. Acı sevenlerin gizli buluşma noktası.', 'Acı sevene', 4, 'Tereyağını servis anında dök; cızırtı sesi sofradaki ilk alkıştır.'],
+  ['kozlenmis-patlican-salatasi', 'Közlenmiş Patlıcan Salatası', 'meze', 30, 'Ev közün kokusuyla dolar, komşu "mangal mı yaktınız" diye kapıyı çalar.', 'Köz kokulu', 4, 'Patlıcanı ocakta közle, kısa süre poşette beklet; kabuğu kendiliğinden soyulur.'],
+  ['yogurtlu-kabak', 'Yoğurtlu Kabak Mezesi', 'meze', 18, 'Sotelenmiş kabak, sarımsaklı yoğurt, dereotu. Hızlı, hafif, her zaman kurtarıcı.', 'On sekiz dakikalık kurtarıcı', 4, 'Kabağın suyunu iyice sık; sulu meze, sulu sohbet getirir.'],
+  ['pancar-salatasi', 'Pancar Salatası', 'meze', 50, 'Mor renkli, sirkeli, sarımsaklı. Beyaz tabakta sofranın renk ustası.', 'Renk ustası', 4, 'Pancarı eldivenle doğra; oje rengin değişmesin.'],
+  ['zeytinyagli-biber-dolmasi', 'Zeytinyağlı Biber Dolması', 'zeytinyagli', 70, 'Kuş üzümlü, fıstıklı iç. Gün sahibinin "ben gerçekten uğraştım" belgesi.', 'Emek belgesi', 5, 'Bir gün önce yap, tencerede soğusun; ertesi gün iç pilav tam kıvamını bulur.'],
+  ['zeytinyagli-barbunya', 'Zeytinyağlı Barbunya', 'zeytinyagli', 75, 'Havuçlu, patatesli, limonlu. Mütevazı ama doyurucu; gün sofrasının sağlam dostu.', 'Sağlam dost', 4, 'Servis ederken üzerine bol maydanoz ve bir limon dilimi; renk geri gelir.'],
+  ['zeytinyagli-kereviz', 'Zeytinyağlı Kereviz', 'zeytinyagli', 50, 'Portakallı, havuçlu, bezelyeli. Kışın sofraya gelen ferah bir nefes.', 'Kış ferahlığı', 4, 'Kerevizi doğrar doğramaz limonlu suya at; kararmaz, tabak parlar.'],
+  ['zeytinyagli-enginar', 'Zeytinyağlı Enginar', 'zeytinyagli', 55, 'Enginar çanağında bezelye ve havuç. Sofraya gelince "bu ne zarif" denir.', 'Zarafet tabağı', 5, 'Hazır temizlenmiş enginar al; zahmeti senin değil, zarafeti senin.'],
+  ['mucver', 'Kabak Mücveri', 'arasicak', 30, 'Dereotlu, peynirli, kenarları çıtır. Yoğurt kasesiyle birlikte gelirse misafir oturduğu yerden kalkmaz.', 'Yoğurt eşliğinde', 4, 'Rendelenmiş kabağın suyunu sık, hamur cıvık olmasın; airfryer da iş görür.'],
+  ['patates-koftesi', 'Patates Köftesi', 'arasicak', 40, 'Kaşarlı, maydanozlu, galeta unlu. Çocukların ve büyüklerin ortak noktası.', 'Barış elçisi', 4, 'Köfteleri şekillendirip 30 dakika buzdolabında beklet; kızartırken dağılmaz.'],
+  ['puf-boregi', 'Puf Böreği', 'borek', 50, 'Kızgın yağda balon gibi kabaran peynirli yarım aylar. Hafif görünür, sayısı ağır gelir.', 'Balon etkisi', 4, 'Kenarlarını çatalla bastır; peynir kaçarsa yağ sıçrar, morallerin de.'],
+  ['un-kurabiyesi', 'Un Kurabiyesi', 'kurabiye', 40, 'Ağızda dağılan, pudra şekerli, nostaljik. Herkesin anneannesinin gizli tarifi.', 'Anneanne klasiği', 5, 'Pişince kesinlikle sıcakken dokunma; soğuyunca pudra şekerine bula.'],
+  ['tahinli-kurabiye', 'Tahinli Kurabiye', 'kurabiye', 30, 'Kıyır kıyır, susamlı, tarçınlı. Çay bardağının yanında kendine yer açar.', 'Çay yoldaşı', 4, 'Tahini iyice karıştırıp kullan; dibe çöken yağ kıvamı değiştirir.'],
+  ['havuclu-tarcinli-kek', 'Havuçlu Tarçınlı Kek', 'kurabiye', 65, 'Nemli, cevizli, tarçın kokulu. Ev, misafirden önce mis gibi kokar.', 'Ev kokusu', 4, 'Havucu ince rendele; kekin her lokmasına eşit dağılsın.'],
+  ['trilece', 'Trileçe', 'tatli', 50, 'Üç sütle ıslanmış kek, karamel sos. Balkanlardan gelip gün sofrasına yerleşmiş, gitmeye niyeti yok.', 'Gitmeyen misafir', 5, 'Bir gece önce yap; sütü tamamen çeksin, karamel servis anında.'],
+  ['firinda-sutlac', 'Fırında Sütlaç', 'tatli', 60, 'Üstü kızarık, kenarı karamelize. Şerbetli tatlı istemeyenin sığınağı.', 'Şerbet istemeyene', 4, 'Kaselerde servis et, üstüne tarçını misafir koysun; herkesin tarçın politikası farklı.'],
+  ['kemalpasa', 'Kemalpaşa Tatlısı', 'tatli', 55, 'Şerbetli, peynirli küçük toplar, yanında kaymak. Lokmalık ama ağırbaşlı.', 'Kaymak eşliğinde', 4, 'Şerbetini tuzlu tabaklardan uzak tut; peynirli toplar şerbeti cömertçe paylaşır.'],
+  ['gullac', 'Güllaç', 'tatli', 35, 'Gül suyu kokulu sütte yumuşayan ince yapraklar, ceviz ve nar. Hafif, zarif, fotoğrafta efsane.', 'Hafif ve zarif', 5, 'Üzerine nar tanelerini servisten hemen önce serp; kırmızı-beyaz kontrast tabağı taşır.'],
+  ['kadayif-dolmasi', 'Kadayıf Dolması', 'tatli', 65, 'Cevizle sarılmış çıtır kadayıf ruloları. Bayram sofrasından gün sofrasına terfi.', 'Bayram terfisi', 4, 'Soğuk şerbeti sıcak kadayıfa dök; çıtırlık ancak böyle korunur.'],
+  ['kabak-tatlisi', 'Kabak Tatlısı', 'tatli', 60, 'Kendi suyunda pişen balkabağı, tahin ve ceviz. Kasımın en turuncu tatlısı.', 'Mevsimin turuncusu', 4, 'Tahini üstüne ince ince gezdir, cevizi iri kır; tabak hem rustik hem şık.'],
+  ['biskuvili-pasta', 'Bisküvili Pasta', 'tatli', 35, 'Fırınsız, muhallebili, kat kat. Son dakika panik durumunun en sevimli çözümü.', 'Son dakika kurtarıcısı', 4, 'Bisküviyi süte hızlıca batır çıkar; bekletirsen pasta değil lapa olur.'],
+  ['kis', 'Kiş', 'beyazyaka', 70, 'Tereyağlı tart hamurunda yumurtalı, kremalı dolgu. Börek değil, kiş. Fark büyük, unvan büyük.', 'Börek değil, kiş', 4, 'Mini tart kalıplarında yaparsan her misafire bir kiş; porsiyon pazarlığı biter.'],
+  ['bruschetta', 'Bruschetta', 'beyazyaka', 15, 'Kızarmış ekmek, domates, sarımsak, fesleğen. İtalyan bir aperatif, gün sofrasında sıcak karşılandı.', 'İtalyan aperatif', 4, 'Domatesi servisten hemen önce koy; ekmek ıslanmadan çıtır kalsın.'],
+  ['caprese-salata', 'Caprese Salata', 'beyazyaka', 10, 'Domates, mozzarella, fesleğen. On dakikada İtalya, sıfır ocak.', 'On dakikada İtalya', 4, 'Kürdanlara dizip mini şiş yaparsan ayakta da yenir.'],
+  ['san-sebastian-cheesecake', 'San Sebastian Cheesecake', 'beyazyaka', 65, 'Üstü yanık, içi kremamsı. "Yanmış mı bu?" sorusuna "kasıtlı" cevabı verilir.', 'Kasıtlı yanık', 5, 'Bir gece buzdolabında dinlendir; dilimler düzgün, içi kadife olur.'],
+  ['dubai-cikolatasi', 'Dubai Çikolatası', 'beyazyaka', 40, 'Kavrulmuş kadayıf, fıstık kreması, çikolata. Kırıldığında çıtırtısı videoya girer.', 'Viral çıtırtı', 5, 'Küçük kareler hâlinde kes; pahalı malzeme küçük porsiyonda daha kıymetli durur.'],
+  ['hurmali-enerji-toplari', 'Hurmalı Enerji Topları', 'beyazyaka', 15, 'Hurma, yulaf, kuruyemiş. Şekersiz, fırınsız, vegan. Sağlıklı tabakların yıldızı.', 'Fırınsız vegan', 4, 'Bir kısmını hindistan cevizine, bir kısmını kakaoya bula; iki renk, tek emek.'],
+  ['yogurtlu-meyveli-parfe', 'Yoğurtlu Meyveli Parfe', 'beyazyaka', 10, 'Süzme yoğurt, granola, mevsim meyvesi, kat kat bardakta. Brunch hissi, on dakikada.', 'Brunch hissi', 4, 'Granolayı servisten hemen önce ekle; yumuşarsa çıtırtı gider.']
 ];
 
 const mmTarifler = mmHam.map(([slug, ad, kategori, sure, spot, rozet, onay, ipucu]) => ({
@@ -275,7 +308,7 @@ tamTarifler.forEach((t) => {
 
 const tumTarifler = [...tamTarifler, ...mmTarifler];
 
-const beyazYakaSecki = ['mascarponeli-tiramisu-kuplari', 'narli-kisir', 'hardalli-patates-salatasi', 'mascarponeli-meyveli-tartolet', 'mangolu-chia-puding', 'avokadolu-humuslu-crostini', 'firin-sebzeli-kinoa-salatasi', 'keci-peynirli-balli-mini-borek'];
+const beyazYakaSecki = ['mascarponeli-tiramisu-kuplari', 'narli-kisir', 'hellimli-narli-mini-sis', 'fume-somonlu-mini-pankek', 'pancarli-humus-kuplari', 'fistikli-kadayifli-cheesecake-kuplari', 'balkabakli-burrata-salatasi', 'keci-peynirli-balli-mini-borek'];
 
 const haftaninTabagi = ['patatesli-milfoy-borek', 'yalanci-tiramisu', 'ocaksiz-kisir', 'mercimek-koftesi', 'havuc-tarator', 'pacanga-boregi'];
 
