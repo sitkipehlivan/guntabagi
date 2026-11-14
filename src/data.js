@@ -294,16 +294,25 @@ const mmHam = [
   ['yogurtlu-meyveli-parfe', 'Yoğurtlu Meyveli Parfe', 'beyazyaka', 10, 'Süzme yoğurt, granola, mevsim meyvesi, kat kat bardakta. Brunch hissi, on dakikada.', 'Brunch hissi', 4, 'Granolayı servisten hemen önce ekle; yumuşarsa çıtırtı gider.']
 ];
 
-const mmTarifler = mmHam.map(([slug, ad, kategori, sure, spot, rozet, onay, ipucu]) => ({
-  slug, ad, kategori, sure, spot, rozet, onay, ipucu, tip: 'mm', mmUrl: MM(slug), img: MMIMG(slug)
-}));
+// Mesai Mutfak klasikleri: Gün Tabağı üslubuyla tam tarif (ölçü + adım); MM'ye küçük link kalır
+const mmTam = Object.assign({}, require('./mm-tam-1'), require('./mm-tam-2'), require('./mm-tam-3'), require('./mm-tam-4'));
+const cizimKat = { borek: 'borek', meze: 'brokoli', arasicak: 'pacanga', zeytinyagli: 'havuc', tatli: 'tiramisu', kurabiye: 'kurabiye', beyazyaka: 'brokoli' };
+const mmTarifler = [];
+mmHam.forEach(([slug, ad, kategori, sure, spot, rozet, onay, ipucu]) => {
+  const d = mmTam[slug];
+  if (!d) { mmTarifler.push({ slug, ad, kategori, sure, spot, rozet, onay, ipucu, tip: 'mm', mmUrl: MM(slug), img: MMIMG(slug) }); return; }
+  tamTarifler.push({
+    slug, ad, kategori, cizim: cizimKat[kategori], spot, rozet, hazirlik: d.h, pisirme: d.p, porsiyon: d.po, zorluk: d.z,
+    karne: d.k, malzemeler: d.m.map((x) => x.split('|')), adimlar: d.a, ipucu, sorarlarsa: d.s, mmUrl: MM(slug), mmImg: MMIMG(slug)
+  });
+});
 
 tamTarifler.forEach((t) => {
   t.tip = 'tam';
   t.sure = t.hazirlik + t.pisirme;
   t.onay = t.karne[0][1];
   const jpg = require('path').join(__dirname, 'static', 'img', 'tarifler', `${t.slug}.jpg`);
-  t.img = require('fs').existsSync(jpg) ? `/img/tarifler/${t.slug}.jpg` : `/img/tarifler/${t.slug}.svg`;
+  t.img = require('fs').existsSync(jpg) ? `/img/tarifler/${t.slug}.jpg` : (t.mmImg || `/img/tarifler/${t.slug}.svg`);
 });
 
 const tumTarifler = [...tamTarifler, ...mmTarifler];

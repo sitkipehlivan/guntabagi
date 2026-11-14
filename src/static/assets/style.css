@@ -270,3 +270,5 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0;line-height:1.08}
 .panik-yakinda{flex:1 1 360px;min-width:0;background:var(--pudra);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px}
 .panik-yakinda p{margin:0;color:var(--metin2)}
 .panik-yakinda .btn{align-self:flex-start}
+.mm-link{margin:18px 0 0;font-size:.92rem;opacity:.8}
+.mm-link a{text-decoration:underline}

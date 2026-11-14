@@ -274,7 +274,7 @@ function karneHtml(karne) {
 }
 function tamSayfa(t) {
   const ld = {
-    '@context': 'https://schema.org', '@type': 'Recipe', name: t.ad, description: t.spot, image: [SITE + t.img],
+    '@context': 'https://schema.org', '@type': 'Recipe', name: t.ad, description: t.spot, image: [t.img.startsWith('http') ? t.img : SITE + t.img],
     author: { '@type': 'Organization', name: 'Gün Tabağı' }, publisher: { '@type': 'Organization', name: 'Advance Digital' },
     prepTime: `PT${t.hazirlik}M`, cookTime: `PT${t.pisirme}M`, totalTime: `PT${t.sure}M`, recipeYield: t.porsiyon,
     recipeCategory: kat[t.kategori], recipeCuisine: 'Türk',
@@ -296,6 +296,7 @@ ${reklam('tarif-ici-mobil-320x100')}
 <section class="tarif-bolum"><h2>Yapılışı</h2><ol class="adimlar">${t.adimlar.map(([m, l]) => `<li><div><p>${esc(m)}</p><div class="el">${esc(l)}</div></div></li>`).join('')}</ol></section>
 <div class="kutular"><section class="kutu pembe"><h2>Gün ipucu</h2><p>${esc(t.ipucu)}</p></section>
 <section class="kutu cerceve"><h2>Sorarlarsa ne diyeceksin?</h2><p><strong>${esc(t.sorarlarsa[0])}</strong> diye sorulursa: ${esc(t.sorarlarsa[1])}</p></section></div>
+${t.mmUrl ? `<p class="mm-link">Bu klasiğin bir de Mesai Mutfak versiyonu var: <a href="${t.mmUrl}">Mesai Mutfak'ta ${esc(t.ad)}</a></p>` : ''}
 ${kazaHtml(t.slug)}
 </article>${yanKutu(t)}</div></div>`
   });
